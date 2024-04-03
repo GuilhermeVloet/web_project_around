@@ -1,0 +1,49 @@
+.page {
+    max-width: 1280px;
+    height: 100vh;
+    background-color: #000000;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ /* @media only screen and (max-width: 1024px) {
+    .page {
+      max-width: 1024px;
+      background-color: #2a2c2f;
+      margin: 0 auto;
+      font-family: "Inter", sans-serif;
+    }
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .page {
+      max-width: 720px;
+      background-color: #2a2c2f;
+      margin: 0 auto;
+      font-family: "Inter", sans-serif;
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .page {
+      max-width: 550px;
+      background-color: #2a2c2f;
+      margin: 0 auto;
+      font-family: "Inter", sans-serif;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    .page {
+      max-width: 320px;
+      background-color: #2a2c2f;
+      margin: 0 auto;
+      font-family: "Inter", sans-serif;
+    }
+  }
+  */
+  
