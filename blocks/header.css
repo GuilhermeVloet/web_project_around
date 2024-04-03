@@ -1,7 +1,6 @@
 .header{
     width: 880px;
     padding-top: 45px;
-    border-bottom: 1px solid #545454;
 }
 
 .logo__header{
@@ -10,4 +9,11 @@
     max-width: 173px;
     max-height: 33px;
 
+}
+
+.line__header{
+    background-color: transparent;
+    border-bottom: 1px solid #545454;
+    margin: 0;
+    opacity: 0.7;
 }
