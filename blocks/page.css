@@ -15,10 +15,10 @@
     }
   }
   
-  @media only screen and (max-width: 720px) {
+  @media only screen and (max-width: 880px) {
     .page {
       width: 100%;
-      max-width: 720px;
+      max-width: 880px;
     }
   }
   
@@ -26,6 +26,13 @@
     .page {
       width: 100%;
       max-width: 550px;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .page {
+      width: 100%;
+      max-width: 460px;
     }
   }
   
