@@ -1,16 +1,22 @@
 .modal{
-    width: 100%;
-    height: 100%;
-    max-width: 430px;
-    max-height: 330px;
+    position: absolute;
+    display: none;
+    background-color: rgba(00, 00, 00, 0.5);
 }
 
 .modal__header{
+    background-color: #ffffff;
     padding: 0 36px;
+    width: 100%;
+    height: 100%;
+    max-width: 430px;
+    max-height: 330px
 }
 
-.modal__close{
-
+.modal__open{
+    
+    display: flex;
+    position: relative;
 }
 
 .modal__title{
@@ -22,6 +28,13 @@
     line-height: 29.05px;
     color: #000000;
 
+}
+
+.button__close{
+    width: 100%;
+    height: 100%;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .form{
@@ -49,13 +62,10 @@
     border: none;
   }
 
-.modal__button{
+.form__button{
     width: 358px;
     background-color: #000000;
     border: 0;
-}
-
-.modal__heading-button{
     font-family: "Inter", Arial, sans-serif;
     color: #ffffff;
     font-size: 18px;

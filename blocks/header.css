@@ -17,3 +17,27 @@
     margin: 0;
     opacity: 0.7;
 }
+
+@media only screen and (max-width: 1024px) {
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .header{
+        width: 650px;
+        padding-top: 45px;
+    }
+  }
+  
+  @media only screen and (max-width: 550px) {
+    .header{
+        width: 500px;
+        padding-top: 25px;
+    }
+  }
+  
+  @media only screen and (max-width: 320px) {
+    .header{
+        width: 300px;
+        padding-top: 15px;
+    }
+  }

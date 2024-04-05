@@ -8,40 +8,32 @@
     align-items: center;
   }
   
- /* @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1024px) {
     .page {
+      width: 100%;
       max-width: 1024px;
-      background-color: #2a2c2f;
-      margin: 0 auto;
-      font-family: "Inter", sans-serif;
     }
   }
   
   @media only screen and (max-width: 720px) {
     .page {
+      width: 100%;
       max-width: 720px;
-      background-color: #2a2c2f;
-      margin: 0 auto;
-      font-family: "Inter", sans-serif;
     }
   }
   
   @media only screen and (max-width: 550px) {
     .page {
+      width: 100%;
       max-width: 550px;
-      background-color: #2a2c2f;
-      margin: 0 auto;
-      font-family: "Inter", sans-serif;
     }
   }
   
   @media only screen and (max-width: 320px) {
     .page {
+      width: 100%;
       max-width: 320px;
-      background-color: #2a2c2f;
-      margin: 0 auto;
-      font-family: "Inter", sans-serif;
     }
   }
-  */
+  
   
