@@ -40,6 +40,23 @@
         width: 500px;
         padding-top: 25px;
     }
+
+    .header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 500px;
+      padding-top: 28px;
+  }
+  
+  .logo__header{
+      max-width: 126px;
+  }
+  
+  .line__header{
+    width: 100%;
+    max-width: 500px;
+  }
 }
 
 @media only screen and (max-width: 460px) {
