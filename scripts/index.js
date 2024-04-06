@@ -1,29 +1,29 @@
 //Botão de Ativar e Fechar
 const buttonEditor = document.querySelector(".profile__button-editor")
 const modal = document.querySelector(".modal")
-function popActive() {
+function activePop() {
     modal.classList.add("modal__open")
     nomeInput.value = nomePerfil.textContent
     sobreInput.value = sobrePerfil.textContent
 }
-buttonEditor.addEventListener("click", popActive)
+buttonEditor.addEventListener("click", activePop)
 
 const buttonClose = document.querySelector(".modal__button-close")
-function popClose() {
+function closePop() {
     modal.classList.remove("modal__open")
 }
-buttonClose.addEventListener("click", popClose)
+buttonClose.addEventListener("click", closePop)
 
 //Botão de Like
 const buttonLikeActive = document.querySelectorAll(".gallery__button-like")
-function likeActive(button) {
+function activeLike(button) {
     if(button.getAttribute("src") == "./imagens/likeclose.png"){
         return button.setAttribute("src", "./imagens/like.png")
     }
     button.setAttribute("src", "./imagens/likeclose.png")
 }
 buttonLikeActive.forEach(button => {
-    button.addEventListener("click", () => likeActive(button))
+    button.addEventListener("click", () => activeLike(button))
 })
 
 //Buscando info pop up Nome
@@ -46,7 +46,7 @@ function handleProfileFormSubmit(evt) {
     // Vamos encontrar os campos de formulário do DOM
     nomePerfil.textContent = nomeInput.value
     sobrePerfil.textContent = sobreInput.value
-    popClose()
+    closePop()
     // Pegue os valores de cada campo do valor da propriedade correspondente
 
     // Selecione os elementos aos quais os valores dos campos serão inseridos
