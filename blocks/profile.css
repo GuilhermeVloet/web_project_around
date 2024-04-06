@@ -122,6 +122,14 @@
     }
   }
 
+  @media only screen and (max-width: 880px) {
+    .profile__title{
+        margin: 0;
+        font-size: 35px;
+        line-height: 27px;
+    }
+  }
+
   @media only screen and (max-width: 460px) {
     .profile{
         margin-top: 42px;
@@ -144,14 +152,12 @@
         margin: 30px 0 0;
         font-size: 22px;
         line-height: 26.63px;
-        font-weight: 500;    
     }
 
     .profile__title{
         margin: 0;
         font-size: 22px;
         line-height: 26.63px;
-        font-weight: 500;    
     }
     
     .profile__subtitle{
