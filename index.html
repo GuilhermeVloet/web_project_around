@@ -15,28 +15,28 @@
         <header class="header" id="header">
             <img
             src="./imagens/logo.png" 
-            class="logo__header" 
+            class="header__logo" 
             alt="Logo-Site-Around"
             />
-            <hr class="line__header">
+            <hr class="header__line">
             <div class="profile">
-              <img src="./imagens/Jacques.jpg" alt="" class="foto__perfil">
-              <ul class="nav__list">
-                  <li class="nav__list-item">
-                      <h2 class="title-list">Jacques Cousteau</h2>
+              <img src="./imagens/Jacques.jpg" alt="" class="profile__foto-perfil">
+              <ul class="profile__list">
+                  <li class="profile__list-item">
+                      <h2 class="profile__title">Jacques Cousteau</h2>
                       <img
                       src="./imagens/editar.png"
-                      class="button__editor"
+                      class="profile__button-editor"
                       alt="Botão-editar-perfil"
                       >
                   </li>
-                  <li class="nav__list-item">
-                      <p class="subtitle-list">Explorador</p>
+                  <li class="profile__list-item">
+                      <p class="profile__subtitle">Explorador</p>
                   </li>
               </ul>
               <img
               src="./imagens/mais.png"
-              class="button__popup"
+              class="profile__button-popup"
               alt="Botão-saiba-mais"
               >
             </div>
@@ -53,7 +53,7 @@
                   <h2 class="gallery__title">Vale de Yosemite</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -68,7 +68,7 @@
                   <h2 class="gallery__title">Lago Louise</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -83,7 +83,7 @@
                   <h2 class="gallery__title">Montanhas Care</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -98,7 +98,7 @@
                   <h2 class="gallery__title">Latemar</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -113,7 +113,7 @@
                   <h2 class="gallery__title">Parque Nacional</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -128,7 +128,7 @@
                   <h2 class="gallery__title">Lago di Braies</h2>
                   <img 
                   src="./imagens/like.png"
-                  class="button__like"
+                  class="gallery__button-like"
                   alt="Botão de Curitr"
                   />
                 </div>
@@ -144,13 +144,13 @@
       <div class="modal__header">    
         <img 
         src="./imagens/close-icon.png"
-        class="button__close"
+        class="modal__button-close"
         alt="Botão de Fechar"
         >
         <h2 class="modal__title">Editar perfil</h2>
         <form class="form">
           <fieldset class="form__modal">
-            <label for="text" class="form__label">
+            <label class="form__label">
               <input
               type="text"
               id="nome"
@@ -158,9 +158,9 @@
               placeholder="Nome"
               required
               >
-              <hr class="form__line">
             </label>
-            <label for="text" class="form__label">
+            <hr class="form__line">
+            <label class="form__label">
               <input
               type="text"
               id="sobre"
@@ -168,8 +168,8 @@
               placeholder="Função"
               required
               >
-              <hr class="form__line">
             </label>
+            <hr class="form__line">
             <button class="form__button" type="submit">Salvar</button>            
             </fieldset>
         </form>

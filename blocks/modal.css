@@ -23,7 +23,6 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    display: flex;
     position: relative;
 }
 
@@ -46,7 +45,7 @@
 
 }
 
-.button__close{
+.modal__button-close{
     width: 100%;
     max-width: 40px;
     position: relative;
@@ -54,7 +53,7 @@
     left: 240px;
 }
 
-.button__close:hover{
+.modal__button-close:hover{
     opacity: 0.6;
 }
 
@@ -108,16 +107,17 @@
 
 
 .form__line{
+    width: 100%;
     max-width: 358px;
     border-bottom: 1px solid #000000;
     opacity: 0.2;
 }
 
-.button__editor:hover{  
+.profile__button-popup:hover{
     opacity: 0.6;
 }
 
-.button__popup:hover{
+.profile__button-editor:hover{  
     opacity: 0.6;
 }
 
@@ -136,7 +136,7 @@
         line-height: 21.78px;    
     }
     
-    .button__close{
+    .modal__button-close{
      width: 100%;
     max-width: 40px;
     position: relative;
@@ -183,7 +183,7 @@
         line-height: 21.78px;    
     }
     
-    .button__close{
+    .modal__button-close{
         width: 100%;
         max-width: 26px;
         top: -80px;
