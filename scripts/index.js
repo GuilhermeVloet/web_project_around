@@ -17,10 +17,10 @@ buttonClose.addEventListener("click", closePop)
 //Botão de Like
 const buttonLikeActive = document.querySelectorAll(".gallery__button-like")
 function activeLike(button) {
-    if(button.getAttribute("src") == "./imagens/likeclose.png"){
-        return button.setAttribute("src", "./imagens/like.png")
+    if(button.getAttribute("src") == "./images/likeclose.png"){
+        return button.setAttribute("src", "./images/like.png")
     }
-    button.setAttribute("src", "./imagens/likeclose.png")
+    button.setAttribute("src", "./images/likeclose.png")
 }
 buttonLikeActive.forEach(button => {
     button.addEventListener("click", () => activeLike(button))
