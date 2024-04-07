@@ -141,8 +141,8 @@
     .profile__button-popup{
         margin: 40px 0 0;
         width: 100%;
-        max-width: 400px;
-        max-height: 90px;
+        max-width: 350px;
+        max-height: 80px;
     }
   }
   
@@ -239,6 +239,7 @@
         margin: 36px 0 0;
         width: 100%;
         max-width: 282px;
+        max-height: 50px;
     }
 
 }
