@@ -49,7 +49,7 @@
     width: 100%;
     max-width: 40px;
     position: relative;
-    top: -30px;
+    top: -50px;
     left: 240px;
 }
 
@@ -138,10 +138,10 @@
     
     .modal__button-close{
      width: 100%;
-    max-width: 40px;
+    max-width: 26px;
     position: relative;
-    top: 30px;
-    left: 240px;
+    top: -80px;
+    left: 140px;
 }
 
     
@@ -186,8 +186,6 @@
     .modal__button-close{
         width: 100%;
         max-width: 26px;
-        top: -80px;
-        left: 140px;
     }
     
     .form{
