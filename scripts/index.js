@@ -1,3 +1,4 @@
+// Modal Pop-Up (Name)
 //Botão de Ativar e Fechar
 const buttonEditor = document.querySelector(".profile__button-editor")
 const modal = document.querySelector(".modal")
@@ -58,3 +59,5 @@ const formElement = document.querySelector(".form")
 // Conecte o handler ao formulário:
 // ele vai observar o evento de submit
 formElement.addEventListener('submit', handleProfileFormSubmit);
+
+// Modal Pop-Up New Local
