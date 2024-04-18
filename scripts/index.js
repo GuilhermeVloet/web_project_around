@@ -41,23 +41,32 @@ console.log(sobrePerfil.textContent)
 const buttonSalvar = document.querySelector(".form__input")
 function handleProfileFormSubmit(evt) {
     evt.preventDefault();
-    // Fazendo isso, podemos definir nossa própria forma de enviar o formulário.
-    // Explicaremos em mais detalhes posteriormente.
-
-    // Vamos encontrar os campos de formulário do DOM
     nomePerfil.textContent = nomeInput.value
     sobrePerfil.textContent = sobreInput.value
     closePop()
-    // Pegue os valores de cada campo do valor da propriedade correspondente
-
-    // Selecione os elementos aos quais os valores dos campos serão inseridos
-
-    // Insira novos valores usando a
-    // propriedade textContent
 }
 const formElement = document.querySelector(".form")
-// Conecte o handler ao formulário:
-// ele vai observar o evento de submit
 formElement.addEventListener('submit', handleProfileFormSubmit);
 
+
 // Modal Pop-Up New Local
+const  buttonCriar = document.querySelector(".profile__button-popup")
+const modalLocal = document.querySelector(".modal-newlocal")
+function activeLocalPop() {
+    modal.classList.add("modal__open-local")
+}
+buttonCriar.addEventListener("click", activeLocalPop)
+
+const buttonLocalClose = document.querySelector(".modal__button-close")
+function closeLocalPop() {
+    modalLocal.classList.remove("modal__open-local")
+}
+buttonLocalClose.addEventListener("click", closeLocalPop)
+
+//Buscando info pop up Nome
+const titleInput = document.querySelector("#title")
+console.log(titleInput.textContent)
+
+//Buscando info pop up Sobre
+const linkInput = document.querySelector("#link")
+console.log(linkInput.textContent)

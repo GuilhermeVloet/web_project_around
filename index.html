@@ -214,12 +214,12 @@
       </div>
     </div>
     <div class="modal-newlocal">
-      <div class="modal">
-        <div class="modal__local">
+      <div class="modal-local">
+        <div class="modal__item-image">
           <img
-            src=""
-            class=""
-            alt=""
+          src="./images/close-icon.png"
+          class="modal__button-close"
+          alt="Botão de Fechar"
           />
           <h2 class="modal__local-title">Novo Local</h2>
           <form class="form-local">
@@ -227,7 +227,7 @@
               <label class="form__label-local">
                 <input
                   type="text"
-                  id="titulo"
+                  id="title"
                   class="form__input-local"
                   placeholder="Título"
                   required
@@ -237,12 +237,13 @@
               <label class="form__label-local">
                 <input
                   type="file"
-                  id="lin-image"
+                  id="link"
                   class="form__input-local"
                   placeholder="Link de imagem"
                   required
                 />
               </label>
+              <hr class="form__line-local" />
               <button class="form__button-local" type="submit">Criar</button>
             </fieldset>
           </form>
