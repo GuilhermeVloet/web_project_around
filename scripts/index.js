@@ -51,9 +51,11 @@ formElement.addEventListener('submit', handleProfileFormSubmit);
 
 // Modal Pop-Up New Local
 const  buttonCriar = document.querySelector(".profile__button-popup")
-const modalLocal = document.querySelector(".modal-newlocal")
+const modalLocal = document.querySelector(".modal-local")
 function activeLocalPop() {
     modal.classList.add("modal__open-local")
+    titleGallery.textContent = titleInput.value
+    imageGallery.textContent = linkInput.value
 }
 buttonCriar.addEventListener("click", activeLocalPop)
 
@@ -65,8 +67,10 @@ buttonLocalClose.addEventListener("click", closeLocalPop)
 
 //Buscando info pop up Nome
 const titleInput = document.querySelector("#title")
-console.log(titleInput.textContent)
+const titleGallery = document.querySelector(".gallery__title")
+console.log(titleGallery.textContent)
 
 //Buscando info pop up Sobre
 const linkInput = document.querySelector("#link")
-console.log(linkInput.textContent)
+const imageGallery = document.querySelector(".gallery__image")
+console.log(imageGallery.textContent)
