@@ -213,43 +213,50 @@
         </div>
       </div>
     </div>
-    <div class="modal-newlocal">
-      <div class="modal-local">
-        <div class="modal__item-image">
+    <div class="modal-popup" id="modal-popup">
+      <div class="modal" id="modal">
+        <div class="modal__header" id="modal__header">
           <img
-          src="./images/close-icon.png"
-          class="modal__button-close"
-          alt="Botão de Fechar"
+            src="./images/close-icon.png"
+            class="modal__button-close"
+            id="modal__button-close"
+            alt="Botão de Fechar"
           />
-          <h2 class="modal__local-title">Novo Local</h2>
-          <form class="form-local">
-            <fieldset class="form__modal-local">
-              <label class="form__label-local">
+          <h2 class="modal__title" id="modal__title">Novo Local</h2>
+          <form class="form" id="form">
+            <fieldset class="form__modal" id="form__modal">
+              <label class="form__label" id="form__label">
                 <input
                   type="text"
                   id="title"
-                  class="form__input-local"
-                  placeholder="Título"
+                  class="form__input"
+                  placeholder="Title da Imagem"
                   required
                 />
               </label>
-              <hr class="form__line-local" />
-              <label class="form__label-local">
+              <hr class="form__line" id="form__line"/>
+              <label class="form__label" id="form__label">
                 <input
-                  type="file"
+                  type="url"
                   id="link"
-                  class="form__input-local"
-                  placeholder="Link de imagem"
+                  class="form__input"
+                  placeholder="Link da Imagem"
                   required
                 />
               </label>
-              <hr class="form__line-local" />
-              <button class="form__button-local" type="submit">Criar</button>
+              <hr class="form__line" id="form__line"/>
+              <button class="form__button" type="submit" id="form__button">Criar</button>
             </fieldset>
           </form>
         </div>
       </div>
     </div>
+    <template class="template">
+      <li class="list__item">
+        <ul class="list__title"></ul>
+        <img src="" alt="" class="list__image"></img>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-// Modal Pop-Up (Name)
+// Modal Pop-Up (POP-UP NAME)
 //Botão de Ativar e Fechar
 const buttonEditor = document.querySelector(".profile__button-editor")
 const modal = document.querySelector(".modal")
@@ -50,27 +50,78 @@ formElement.addEventListener('submit', handleProfileFormSubmit);
 
 
 // Modal Pop-Up New Local
-const  buttonCriar = document.querySelector(".profile__button-popup")
-const modalLocal = document.querySelector(".modal-local")
+const button = document.querySelector(".profile__button-popup")
+const modalLocal = document.querySelector("#modal")
 function activeLocalPop() {
-    modal.classList.add("modal__open-local")
+    modalLocal.classList.add("modal__open-local")
     titleGallery.textContent = titleInput.value
     imageGallery.textContent = linkInput.value
 }
-buttonCriar.addEventListener("click", activeLocalPop)
+button.addEventListener("click", activeLocalPop)
 
-const buttonLocalClose = document.querySelector(".modal__button-close")
+const buttonLocalClose = document.querySelector("#modal__button-close")
 function closeLocalPop() {
     modalLocal.classList.remove("modal__open-local")
 }
 buttonLocalClose.addEventListener("click", closeLocalPop)
 
 //Buscando info pop up Nome
-const titleInput = document.querySelector("#title")
-const titleGallery = document.querySelector(".gallery__title")
-console.log(titleGallery.textContent)
+// const titleInput = document.querySelector("#title")
+// const titleGallery = document.querySelector(".gallery__title")
+// console.log(titleGallery.textContent)
 
-//Buscando info pop up Sobre
-const linkInput = document.querySelector("#link")
-const imageGallery = document.querySelector(".gallery__image")
-console.log(imageGallery.textContent)
+// //Buscando info pop up Sobre
+// const linkInput = document.querySelector("#link")
+// const imageGallery = document.querySelector(".gallery__image")
+// console.log(imageGallery.textContent)
+
+// Cartões de Imagens (POP-UP LOCAL)
+const list = document.querySelector(".gallery__item")
+const initialCards = [
+    {
+      name: "Vale de Yosemite",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
+    },
+    {
+      name: "Lago Louise",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
+    },
+    {
+      name: "Montanhas Carecas",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
+    },
+    {
+      name: "Latemar",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
+    },
+    {
+      name: "Parque Nacional da Vanoise ",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
+    },
+    {
+      name: "Lago di Braies",
+      link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
+    }
+  ];
+
+
+initialCards.forEach(addCard);
+
+function addCard(card){
+  const templateContent = document.querySelector(".template").content
+  const cards = templateContent.querySelector(".list__item").cloneNode(true);
+  cards.querySelector(".list__title").textContent = card.name
+  cards.querySelector(".list__image").setAttribute("src", card.link)
+  cards.querySelector(".list__image").setAttribute("alt", card.name)
+  list.append(cards);
+}
+
+const cartaoNovo = { name: "", link: "" }
+addCard(cartaoNovo)
+
+
+// Abertura de Imagens (PART LOCAL)
+
+
+
+// Botão de Remover Imagem (PART LOCAL)

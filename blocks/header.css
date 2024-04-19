@@ -21,7 +21,6 @@
     width: 100%;
 }
 
-
   
 @media only screen and (max-width: 880px) {
     .header{
@@ -67,5 +66,4 @@
     max-width: 126px;
     max-height: 24px;
 }
-
 }
