@@ -1,8 +1,8 @@
-/* .modal__view-opened {
+ .modal__view-opened {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-  } */
+  } 
   
   .modal__container {
     display: flex;
@@ -29,8 +29,29 @@
     position: absolute;
     bottom: -25px;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  @media screen and (max-width: 800px) {
+  /* @media screen and (max-width: 800px) {
     .modal__close-button {
       top: -40px;
       right: 5px;
@@ -43,4 +64,4 @@
       max-width: 282px;
       max-height: 322px;
     }
-  }
+  } */
