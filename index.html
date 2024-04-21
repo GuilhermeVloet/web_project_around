@@ -48,129 +48,31 @@
           />
         </div>
       </header>
-      <main class="content">
-        <section class="gallery">
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/vale_de_Yosemite.jpg"
-              alt="Foto do Vale de Yosemite"
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Vale de Yosemite</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/lago_louise.png"
-              alt="Foto da Lago Louise"
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Lago Louise</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/montanhas_care.png"
-              alt="Foto do Montanhas Care"
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Montanhas Care</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/latemar.png"
-              alt="Foto do Latemar"
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Latemar</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/parque_nacional.png"
-              alt="Foto do Parque Nacional..."
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Parque Nacional</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-          <div class="gallery__item">
-            <img 
-            class="gallery__lixeira"
-            src="./images/lixeira.png"  
-            alt="Lixeira"
-            />
-            <img
-              class="gallery__image"
-              src="./images/lago_di_braies.png"
-              alt="Foto do Lago Di Braies"
-            />
-            <div class="gallery__text-button">
-              <h2 class="gallery__title">Lago di Braies</h2>
-              <img
-                src="./images/like.png"
-                class="gallery__button-like"
-                alt="Botão de Curitr"
-              />
-            </div>
-          </div>
-        </section>
+      <main class="content">         
+          <section class="gallery">
+            <template class="template" id="template">
+              <div class="gallery__item">
+                 <img 
+                 class="gallery__lixeira"
+                 src="./images/lixeira.png"  
+                 alt="Lixeira"
+                 />
+                <img
+                  class="gallery__image"
+                  src="./images/vale_de_Yosemite.jpg"
+                  alt="Foto de Vale de Yosemite"
+                />
+                <div class="gallery__text-button">
+                  <h2 class="gallery__title"></h2>
+                  <img
+                    src="./images/like.png"
+                    class="gallery__button-like"
+                    alt="Botão de Curitr"
+                  />
+                 </div>
+              </div>
+            </template>
+          </section> 
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
@@ -251,12 +153,18 @@
         </div>
       </div>
     </div>
-    <template class="template">
-      <li class="list__item">
-        <ul class="list__title"></ul>
-        <img src="" alt="" class="list__image"></img>
-      </li>
-    </template>
+    <div class="modal__image">
+      <div class="modal__container">
+        <img
+          class="modal__close-button"
+          src="./images/close-icon.png"
+          alt="Botão de fechar o modal"
+        />
+        <div class="modal__image-container">
+          <img class="modal__image-render" src="#" alt="#" />
+          <span class="Modal__image-title"></span>
+        </div>
+      </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

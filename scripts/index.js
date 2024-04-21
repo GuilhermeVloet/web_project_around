@@ -54,8 +54,8 @@ const button = document.querySelector(".profile__button-popup")
 const modalLocal = document.querySelector("#modal")
 function activeLocalPop() {
     modalLocal.classList.add("modal__open-local")
-    titleGallery.textContent = titleInput.value
-    imageGallery.textContent = linkInput.value
+    // titleGallery.textContent = titleInput.value
+    // imageGallery.textContent = linkInput.value
 }
 button.addEventListener("click", activeLocalPop)
 
@@ -76,7 +76,7 @@ buttonLocalClose.addEventListener("click", closeLocalPop)
 // console.log(imageGallery.textContent)
 
 // Cartões de Imagens (POP-UP LOCAL)
-const list = document.querySelector(".gallery__item")
+const list = document.querySelector(".gallery")
 const initialCards = [
     {
       name: "Vale de Yosemite",
@@ -108,20 +108,23 @@ const initialCards = [
 initialCards.forEach(addCard);
 
 function addCard(card){
-  const templateContent = document.querySelector(".template").content
-  const cards = templateContent.querySelector(".list__item").cloneNode(true);
-  cards.querySelector(".list__title").textContent = card.name
-  cards.querySelector(".list__image").setAttribute("src", card.link)
-  cards.querySelector(".list__image").setAttribute("alt", card.name)
+  const templateContent = document.querySelector("#template").content
+  const cards = templateContent.querySelector(".gallery__item").cloneNode(true);
+  cards.querySelector(".gallery__title").textContent = card.name
+  cards.querySelector(".gallery__image").setAttribute("src", card.link)
+  cards.querySelector(".gallery__title").setAttribute("alt", card.name)
   list.append(cards);
 }
 
-const cartaoNovo = { name: "", link: "" }
-addCard(cartaoNovo)
+for (const cartão of initialCards) {
+  addCard(cartão)
+}
 
+const cartaoNovo = { name: "Guilherme", link: "Link novo" }
+addCard(cartaoNovo);
 
-// Abertura de Imagens (PART LOCAL)
-
-
-
-// Botão de Remover Imagem (PART LOCAL)
+// Pop-up Abrir imagem
+const modalOpenImage = document.querySelector(".modal-image");
+const closeModalImage = document.querySelector(
+  ".modal__close-button"
+);
