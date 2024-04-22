@@ -1,3 +1,8 @@
+  .modal__image{
+    display: none;
+    background-color: rgba(00, 00, 00, 0.5);
+  }
+
  .modal__view-opened {
     display: flex;
     justify-content: center;
@@ -22,7 +27,7 @@
     max-height: 600px;
   }
   
-  .Modal__image-title {
+  .modal__image-title {
     color: #ffffff;
     font-size: 12px;
     line-height: 14.52px;

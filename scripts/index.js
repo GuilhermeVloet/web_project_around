@@ -109,7 +109,6 @@ const initialCards = [
       .addEventListener("click", (evt) => {
         const elements = document.querySelector(".gallery");
         const card = evt.target.offsetParent;
-  
         elements.removeChild(card);
       });
     CardAtual
@@ -125,9 +124,7 @@ const initialCards = [
       });
     return CardAtual;
   }
-  
   const elements = document.querySelector(".gallery");
-  
   initialCards.forEach((card, index) => {
     const cardItem = renderCard(card);
     elements.append(cardItem);
@@ -152,7 +149,8 @@ const initialCards = [
   const closePopupViewImageButton = document.querySelector(
     ".modal__close-button"
   );
+  function activeImage(openImage) {
 
-  function imageActive(linkImage) {
-    
   }
+  popupViewImage.addEventListener("click", activeImage)
+  
