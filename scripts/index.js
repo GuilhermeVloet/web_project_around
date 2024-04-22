@@ -96,19 +96,14 @@ const initialCards = [
     const template = document
       .querySelector("#template")
       .content.querySelector(".gallery__item");
-  
     const CardAtual = template.cloneNode(true);
-  
     CardAtual.querySelector(".gallery__title").textContent = card.name;
-  
     CardAtual
       .querySelector(".gallery__image")
       .setAttribute("src", card.link);
-  
     CardAtual
       .querySelector(".gallery__image")
       .setAttribute("alt", card.name);
-  
     CardAtual
       .querySelector(".gallery__lixeira")
       .addEventListener("click", (evt) => {
@@ -117,7 +112,6 @@ const initialCards = [
   
         elements.removeChild(card);
       });
-  
     CardAtual
       .querySelector(".gallery__button-like")
       .addEventListener("click", (evt) => {
@@ -127,10 +121,8 @@ const initialCards = [
             "./images/likeclose.png"
           );
         }
-  
         return evt.target.setAttribute("src", "./images/like.png");
       });
-  
     return CardAtual;
   }
   
@@ -164,5 +156,3 @@ const initialCards = [
   function imageActive(linkImage) {
     
   }
-
-  //Abrir imagem

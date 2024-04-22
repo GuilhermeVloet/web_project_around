@@ -4,20 +4,21 @@
     max-width: 880px;
     display: grid;
     grid-template-columns: 282px 282px 282px;
-    grid-template-rows: 361px 361px;
     row-gap: 20px;
     column-gap: 17px;
   }
   
   .gallery__item{
-    width: 100%;
-    height: 282px;
+    width: 282px;
+    height: 361px;
     position: relative;
   }
 
   .gallery__image {
     width: 100%;
     height: 100%;
+    max-width: 282px;
+    max-height: 282px;
     display: block;
     border-radius: 10px 10px 0px 0px;
   }
@@ -67,13 +68,6 @@
     opacity: 0.5;
   }
 
-  .cartaolista{
-      width: 100%;
-      height: 100%;
-      max-width: 282px;
-      max-height: 361px;
-      background-color: #ffffff;
-  }
 
   @media only screen and (max-width: 880px) {
     .gallery {
