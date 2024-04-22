@@ -54,8 +54,6 @@ const button = document.querySelector(".profile__button-popup")
 const modalLocal = document.querySelector("#modal")
 function activeLocalPop() {
     modalLocal.classList.add("modal__open-local")
-    // titleGallery.textContent = titleInput.value
-    // imageGallery.textContent = linkInput.value
 }
 button.addEventListener("click", activeLocalPop)
 
@@ -64,16 +62,6 @@ function closeLocalPop() {
     modalLocal.classList.remove("modal__open-local")
 }
 buttonLocalClose.addEventListener("click", closeLocalPop)
-
-//Buscando info pop up Nome
-// const titleInput = document.querySelector("#title")
-// const titleGallery = document.querySelector(".gallery__title")
-// console.log(titleGallery.textContent)
-
-// //Buscando info pop up Sobre
-// const linkInput = document.querySelector("#link")
-// const imageGallery = document.querySelector(".gallery__image")
-// console.log(imageGallery.textContent)
 
 // Cartões de Imagens (POP-UP LOCAL)
 const list = document.querySelector(".gallery")
@@ -104,27 +92,77 @@ const initialCards = [
     }
   ];
 
+  function renderCard(card) {
+    const template = document
+      .querySelector("#template")
+      .content.querySelector(".gallery__item");
+  
+    const CardAtual = template.cloneNode(true);
+  
+    CardAtual.querySelector(".gallery__title").textContent = card.name;
+  
+    CardAtual
+      .querySelector(".gallery__image")
+      .setAttribute("src", card.link);
+  
+    CardAtual
+      .querySelector(".gallery__image")
+      .setAttribute("alt", card.name);
+  
+    CardAtual
+      .querySelector(".gallery__lixeira")
+      .addEventListener("click", (evt) => {
+        const elements = document.querySelector(".gallery");
+        const card = evt.target.offsetParent;
+  
+        elements.removeChild(card);
+      });
+  
+    CardAtual
+      .querySelector(".gallery__button-like")
+      .addEventListener("click", (evt) => {
+        if (evt.target.getAttribute("src") === "./images/like.png") {
+          return evt.target.setAttribute(
+            "src",
+            "./images/likeclose.png"
+          );
+        }
+  
+        return evt.target.setAttribute("src", "./images/like.png");
+      });
+  
+    return CardAtual;
+  }
+  
+  const elements = document.querySelector(".gallery");
+  
+  initialCards.forEach((card, index) => {
+    const cardItem = renderCard(card);
+    elements.append(cardItem);
+  });
 
-initialCards.forEach(addCard);
-
-function addCard(card){
-  const templateContent = document.querySelector("#template").content
-  const cards = templateContent.querySelector(".gallery__item").cloneNode(true);
-  cards.querySelector(".gallery__title").textContent = card.name
-  cards.querySelector(".gallery__image").setAttribute("src", card.link)
-  cards.querySelector(".gallery__title").setAttribute("alt", card.name)
-  list.append(cards);
+  const buttonAdd = document.querySelector("#formadd")
+  function handleCardFormSubmit(evt) {
+    evt.preventDefault();
+    const cardName = document.querySelector("#title")
+    const cardLink = document.querySelector("#link")
+    elements.append(renderCard({name: cardName.value, link: cardLink.value}))
+    cardName.value = ""
+    cardLink.value = ""
+    closeLocalPop()
 }
+  const formAdd = document.querySelector("#addForm")
+  console.log(formAdd)
+  formAdd.addEventListener('submit', handleCardFormSubmit);
 
-for (const cartão of initialCards) {
-  addCard(cartão)
-}
+  //Abrir imagem
+  const popupViewImage = document.querySelector(".modal__image");
+  const closePopupViewImageButton = document.querySelector(
+    ".modal__close-button"
+  );
 
-const cartaoNovo = { name: "Guilherme", link: "Link novo" }
-addCard(cartaoNovo);
+  function imageActive(linkImage) {
+    
+  }
 
-// Pop-up Abrir imagem
-const modalOpenImage = document.querySelector(".modal-image");
-const closeModalImage = document.querySelector(
-  ".modal__close-button"
-);
+  //Abrir imagem
