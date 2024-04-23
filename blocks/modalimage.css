@@ -10,7 +10,7 @@
  .modal__view-opened {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
   } 
   
   .modal__container {
@@ -48,11 +48,6 @@
 }
 
 @media only screen and (max-width: 880px) {
-  .modal__view-opened {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  } 
 }
 
 @media only screen and (max-width: 550px) {
