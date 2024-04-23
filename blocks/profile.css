@@ -107,6 +107,11 @@
         flex-direction: column;
         justify-content: none;
     }
+
+    .profile__container-avatar-and-text{
+        display: flex;
+        align-items: center;
+    }
     
     .profile__list-item{
         flex-direction: row;
@@ -147,7 +152,7 @@
     }
   }
 
-  @media only screen and (max-width: 460px) {
+  @media only screen and (max-width: 550px) {
     .profile{
         margin-top: 42px;
         width: 100%;
