@@ -146,48 +146,6 @@
         max-height: 80px;
     }
   }
-  
-/*  @media only screen and (max-width: 550px) {
-    .profile{
-        max-width: 500px;
-    }
-    
-    .profile__foto-perfil{
-        width: 100px;
-        margin-right: 0;
-    }
-    
-    .profile__list{
-        margin: 0;
-        font-size: 25px;
-        line-height: 25px;
-        font-weight: 300;
-        color: white;
-    
-    }
-
-    .profile__title{
-        margin: 0;
-        font-size: 30px;
-        line-height: 26.63px;
-        font-weight: 500;    
-    }
-    
-    .profile__subtitle{
-        margin: 5px 0 0;
-        font-size: 18px;
-        font-weight: 400;
-    }
-    
-    .profile__button-editor{
-        margin-left: 18px;
-    }
-    
-    .profile__button-popup{
-        margin: 0 0 16px;
-        max-width: 100px;
-    }
-  }*/
 
   @media only screen and (max-width: 460px) {
     .profile{
@@ -196,6 +154,11 @@
         max-width: 282px;
         flex-direction: column;
         justify-content: none;
+    }
+
+    .profile__container-avatar-and-text{
+        display: flex;
+        flex-direction: column;
     }
     
     .profile__foto-perfil{
