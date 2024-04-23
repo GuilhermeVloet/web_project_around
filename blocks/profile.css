@@ -1,8 +1,13 @@
 .profile{
     margin-top: 40px;
     max-width: 880px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+.profile__container-avatar-and-text{
+    display: flex;
     align-items: center;
 }
 
@@ -17,15 +22,13 @@
     padding: 0;
     color: white;
     list-style: none;
-
 }
 
 .profile__list-item{
     color: white;
     max-width: 415px;
     display: flex;
-    flex-direction: row;
-    align-items: end;
+    align-items: center;
 }
 
 .profile__title{
@@ -64,7 +67,7 @@
 }
 
 .profile__button-popup{
-    margin: 0 0 0 165px;
+    margin: 0;
     width: 100%;
     max-width: 150px;
     color: white;
