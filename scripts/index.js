@@ -138,14 +138,14 @@ const initialCards = [
   });
 
   //Abrir imagem
-  const popupViewImage = document.querySelector(".modal__image");
+  const popupViewImage = document.querySelector(".modalImage");
   const closePopupViewImageButton = document.querySelector(
-    ".modal__close-button"
+    ".modalbButtonClose"
   );
   function activeImage(event, title) {
     const selectedImage = event.target
-    const titleModalImage = document.querySelector(".modal__image-title")
-    const modalImage = document.querySelector(".modal__image-render")
+    const titleModalImage = document.querySelector(".modalImageTitle")
+    const modalImage = document.querySelector(".modalRenderImage")
     modalImage.src = selectedImage.src
     modalImage.alt = selectedImage.alt
     titleModalImage.textContent = title
