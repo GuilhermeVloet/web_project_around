@@ -93,64 +93,64 @@ const initialCards = [
   ];
 
   function renderCard(card) {
-    const template = document
-      .querySelector("#template")
-      .content.querySelector(".gallery__item");
-    const CardAtual = template.cloneNode(true);
-    CardAtual.querySelector(".gallery__title").textContent = card.name;
-    CardAtual
-      .querySelector(".gallery__image")
-      .setAttribute("src", card.link);
-    CardAtual
-      .querySelector(".gallery__image")
-      .setAttribute("alt", card.name);
-    CardAtual
-      .querySelector(".gallery__lixeira")
-      .addEventListener("click", (evt) => {
-        const elements = document.querySelector(".gallery");
-        const card = evt.target.offsetParent;
-        elements.removeChild(card);
-      });
-    CardAtual
-      .querySelector(".gallery__button-like")
-      .addEventListener("click", (evt) => {
-        if (evt.target.getAttribute("src") === "./images/like.png") {
-          return evt.target.setAttribute(
-            "src",
-            "./images/likeclose.png"
-          );
-        }
-        return evt.target.setAttribute("src", "./images/like.png");
-      });
-    return CardAtual;
+    const template = document.querySelector("#template").content.querySelector(".gallery__item");
+    const cardElement = template.cloneNode(true);
+  
+    const titleElement = cardElement.querySelector(".gallery__title");
+    titleElement.textContent = card.name;
+  
+    const cardImage = cardElement.querySelector(".gallery__image");
+    cardImage.setAttribute("src", card.link);
+    cardImage.setAttribute("alt", card.name);
+    cardImage.addEventListener("click", (event) => activeImage(event, card.name));
+  
+    const lixeiraElement = cardElement.querySelector(".gallery__lixeira");
+    lixeiraElement.addEventListener("click", () => {
+      const galleryElement = document.querySelector(".gallery");
+      galleryElement.removeChild(cardElement);
+    });
+  
+    const likeButtonElement = cardElement.querySelector(".gallery__button-like");
+    likeButtonElement.addEventListener("click", () => {
+      const buttonLikeCard = likeButtonElement.getAttribute("src");
+      const imageLike = buttonLikeCard === "./images/like.png" ? "./images/likeclose.png" : "./images/like.png";
+      likeButtonElement.setAttribute("src", imageLike);
+    });
+  
+    return cardElement;
   }
-  const elements = document.querySelector(".gallery");
-  initialCards.forEach((card, index) => {
+  
+  const galleryElement = document.querySelector(".gallery");
+  initialCards.forEach(card => {
     const cardItem = renderCard(card);
-    elements.append(cardItem);
+    galleryElement.append(cardItem);
   });
-
-  const buttonAdd = document.querySelector("#formadd")
-  function handleCardFormSubmit(evt) {
+  
+  const formAdd = document.querySelector("#addForm");
+  formAdd.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const cardName = document.querySelector("#title")
-    const cardLink = document.querySelector("#link")
-    elements.append(renderCard({name: cardName.value, link: cardLink.value}))
-    cardName.value = ""
-    cardLink.value = ""
-    closeLocalPop()
-}
-  const formAdd = document.querySelector("#addForm")
-  console.log(formAdd)
-  formAdd.addEventListener('submit', handleCardFormSubmit);
+    const cardName = document.querySelector("#title");
+    const cardLink = document.querySelector("#link");
+    galleryElement.prepend(renderCard({ name: cardName.value, link: cardLink.value }));
+    cardName.value = "";
+    cardLink.value = "";
+    closeLocalPop();
+  });
 
   //Abrir imagem
   const popupViewImage = document.querySelector(".modal__image");
   const closePopupViewImageButton = document.querySelector(
     ".modal__close-button"
   );
-  function activeImage(openImage) {
-
+  function activeImage(event, title) {
+    const selectedImage = event.target
+    const titleModalImage = document.querySelector(".modal__image-title")
+    const modalImage = document.querySelector(".modal__image-render")
+    modalImage.src = selectedImage.src
+    modalImage.alt = selectedImage.alt
+    titleModalImage.textContent = title
+    popupViewImage.classList.toggle("modal__view-opened");
   }
-  popupViewImage.addEventListener("click", activeImage)
-  
+  closePopupViewImageButton.addEventListener("click", ()=>
+  popupViewImage.classList.toggle("modal__view-opened")
+);
