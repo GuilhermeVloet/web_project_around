@@ -1,5 +1,6 @@
 .modal__image{
   position: absolute;
+  margin: auto;
   inset: 0;
   display: none;
   width: 100%;
@@ -10,7 +11,7 @@
  .modal__view-opened {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   } 
   
   .modal__container {
@@ -18,6 +19,7 @@
     flex-direction: column;
     position: relative;
     padding: 0;
+    margin-top: 90px;
     max-width: 75vw;
     max-height: 75vh;
   }
@@ -43,15 +45,15 @@
     width: 100%;
     max-width: 40px;
     position: absolute;
-    top: -50px;
-    right: 5px;
-}
-
-@media only screen and (max-width: 880px) {
+    top: -55px;
+    right: -30px;
 }
 
 @media only screen and (max-width: 550px) {
-
+  .modal__container {
+    margin-top: 136px;
+  }
+  
 }
 
 @media only screen and (max-width: 460px) {
