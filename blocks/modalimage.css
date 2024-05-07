@@ -49,6 +49,10 @@
     right: -30px;
 }
 
+.modalbButtonClose:hover{
+  opacity: 0.6;
+}
+
 @media only screen and (max-width: 550px) {
   .modalContainer {
     margin-top: 136px;

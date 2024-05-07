@@ -1,7 +1,3 @@
-.modal-popup{
-    height: 100%;
-}
-
 .modal{
     width: 100%;
     height: 100%;
@@ -19,11 +15,12 @@
     max-width: 430px;
     max-height: 330px;
     border-radius: 10px;
+    padding-bottom: 36px;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     position: relative;
+    z-index: 2;
 }
 
 .modal__open{
@@ -69,26 +66,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .form__label{
     width: 100%;
 }
 
+
+.form__label:nth-child(1) {
+    margin-bottom: 29px;
+  }
+
+
+  /*------> PARTE POP-UP ERROR <-----*/
+
+.button__disabled{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.input__error:invalid {
+    display: flex;
+    max-width: 350px;
+    border-bottom: 2px solid red;
+}
+
+.input__message{
+    display: flex;
+    max-width: 350px;
+    font-size: 12px;
+    color: red;
+}
+
+  /*------> PARTE POP-UP ERROR <-----*/
+
+
 .form__input {
     width: 100%;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Inter", Arial, sans-serif;
     font-size: 14px;
     line-height: 16.94px;
     font-weight: 400;
     border: none;
+    border-bottom: 1px solid rgba(00, 00, 00, 0.2) ;
   }
 
 .form__button{
     width: 358px;
-    margin: 48px 0 36.51px;
     padding: 18px 125px;
+    margin-top: 48px;
     background-color: #000000;
     border: 0;
     font-family: "Inter", Arial, sans-serif;
@@ -101,13 +129,6 @@
 
 .form__button:hover{
     opacity: 0.8;
-}
-
-.form__line{
-    width: 100%;
-    max-width: 358px;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
 }
 
 .profile__button-popup:hover{
@@ -124,6 +145,7 @@
         height: 100%;
         max-width: 282px;
         max-height: 322px;
+        padding: 0;
     }
     
     .modal__title{
@@ -131,15 +153,27 @@
         max-width: 238px;
         font-size: 18px;
         line-height: 21.78px;    
+        margin-bottom: 30px;
+    }
+
+    .form__label{
+        width: 100%;
+        max-width: 238px;
+        font-size: 18px;
+        line-height: 21.78px;    
     }
     
     .modal__button-close{
-     width: 100%;
-    max-width: 26px;
-    position: relative;
-    top: -80px;
-    left: 140px;
-}
+        width: 100%;
+        max-width: 26px;
+        position: relative;
+        top: -80px;
+        left: 140px;
+    }
+
+    .form__label:nth-child(1) {
+        margin-bottom: 20px;
+      }
 
     
     .form{
@@ -147,21 +181,15 @@
     }
     
     .form__button{
-     width: 238px;
-     margin: 46px 0 25px;
-     padding: 14px 96px;
-    border: 2;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 16.94px;
-    font-weight: 400;
-    align-items: center;
-    }
-    
-    .form__line{
-    max-width: 358px;
-    border-bottom: 1px solid #000000;
-    opacity: 0.2;
+        width: 238px;
+        margin: 46px 0 0;
+        padding: 14px 96px;
+        border: 2;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 16.94px;
+        font-weight: 400;
+        align-items: center;
     }
 }
 
@@ -171,9 +199,10 @@
         height: 100%;
         max-width: 282px;
         max-height: 322px;
+        padding: 0;
     }
     
-    .modal__title{
+    .form__label{
         width: 100%;
         max-width: 238px;
         font-size: 18px;
@@ -191,7 +220,7 @@
     
     .form__button{
         width: 238px;
-        margin: 46px 0 25px;
+        margin: 46px 0 0;
         padding: 14px 96px;
         border: 2;
         color: #ffffff;
@@ -201,9 +230,4 @@
         align-items: center;
     }
     
-    .form__line{
-        max-width: 358px;
-        border-bottom: 1px solid #000000;
-        opacity: 0.2;
-    }
 }

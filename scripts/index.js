@@ -10,10 +10,12 @@ function activePop() {
 buttonEditor.addEventListener("click", activePop)
 
 const buttonClose = document.querySelector(".modal__button-close")
-function closePop() {
-    modal.classList.remove("modal__open")
+function closePop(modal, openModalClass) {
+  modal.classList.remove(openModalClass);
 }
-buttonClose.addEventListener("click", closePop)
+buttonClose.addEventListener("click", function() {
+  closePop(modal, "modal__open");
+});
 
 //Botão de Like
 const buttonLikeActive = document.querySelectorAll(".gallery__button-like")
@@ -43,7 +45,7 @@ function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     nomePerfil.textContent = nomeInput.value
     sobrePerfil.textContent = sobreInput.value
-    closePop()
+    closePop(modal, "modal__open")
 }
 const formElement = document.querySelector(".form")
 formElement.addEventListener('submit', handleProfileFormSubmit);
@@ -57,11 +59,11 @@ function activeLocalPop() {
 }
 button.addEventListener("click", activeLocalPop)
 
-const buttonLocalClose = document.querySelector("#modal__button-close")
-function closeLocalPop() {
+const buttonLocalClose = document.querySelector("#modalclose")
+function closePopLocal() {
     modalLocal.classList.remove("modal__open-local")
 }
-buttonLocalClose.addEventListener("click", closeLocalPop)
+buttonLocalClose.addEventListener("click", closePopLocal)
 
 // Cartões de Imagens (POP-UP LOCAL)
 const list = document.querySelector(".gallery")
@@ -134,7 +136,7 @@ const initialCards = [
     galleryElement.prepend(renderCard({ name: cardName.value, link: cardLink.value }));
     cardName.value = "";
     cardLink.value = "";
-    closeLocalPop();
+    closePop(modalLocal, "modal__open-local");
   });
 
   //Abrir imagem
@@ -154,3 +156,101 @@ const initialCards = [
   closePopupViewImageButton.addEventListener("click", ()=>
   popupViewImage.classList.toggle("modal__view-opened")
 );
+
+// Fechar Teclado e click
+document.onkeydown = (event) => {
+  if (event.key == "Escape") {
+    closePop(modal, "modal__open");
+    closePop(modalLocal, "modal__open-local");
+    closePop(popupViewImage, "modal__view-opened");
+  }
+}
+
+modal.addEventListener("click", function(event) {
+  if (event.target == event.currentTarget) {
+    closePop(modal, "modal__open");
+  }
+});
+
+modalLocal.addEventListener("click", function(event) {
+  if (event.target == event.currentTarget) {
+    closePop(modalLocal, "modal__open-local");
+    closePop(popupViewImage, "modal__view-opened");
+  }
+});
+
+popupViewImage.addEventListener("click", function(event) {
+  if (event.target == event.currentTarget) {
+    closePop(popupViewImage, "modal__view-opened");
+  }
+});
+
+
+// Validador de formulario
+function addErrorMessage(tagElement, input) {
+  tagElement.textContent = input.validationMessage
+}
+
+function removeErrorMessage(tagElement) {
+  tagElement.textContent = ""
+}
+
+function addErrorClass(input, errorClass) {
+  input.classList.add(errorClass)
+}
+
+function removeErrorClass(input, errorClass) {
+  input.classList.remove(errorClass)
+}
+
+function validatButton(itens) {
+  const totalInputs = itens.allInputs.length
+  if (!itens.allInputs.filter((i)=> i.validity.valid).length == totalInputs) {
+    itens.buttonElement.removeAttribute("disabled")
+  }else{
+    itens.buttonElement.setAttribute("disabled", true)
+  }
+}
+
+function validateInputs(input, errorClass) {
+  const tagElement = input.nextElementSibling
+  if (!input.validity.valid) {
+    addErrorMessage(tagElement, input)
+    addErrorClass(input, errorClass)
+  } else {
+    removeErrorMessage(tagElement)
+    removeErrorClass(input, errorClass)
+  }
+}
+
+function enableValidation(elementos) {
+  const form = document.querySelector(elementos.formSelector)
+  const inputs = Array.from(form.querySelectorAll(elementos.inputSelector))
+  const button = form.querySelector(elementos.submitButtonSelector)
+  for (const input of inputs) {
+    input.addEventListener("input", (event) =>{
+      const element = event.target
+      validateInputs(element, elementos.inputErrorClass)
+      validatButton({ buttonElement: button, allInputs: inputs })
+    })
+  }
+}
+
+enableValidation({
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "button__disabled",
+  inputErrorClass: "input__error",
+  errorClassMsg: "input__message",
+});
+
+// enableValidation(Gallery)
+enableValidation({
+    formSelector: "#addForm",
+    inputSelector: ".form__input",
+    submitButtonSelector: ".form__button",
+    inactiveButtonClass: "button__disabled",
+    inputErrorClass: "input__error",
+    errorClassMsg: "input__message",
+  });

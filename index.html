@@ -24,40 +24,38 @@
         <hr class="header__line" />
         <div class="profile">
           <div class="profile__container-avatar-and-text">
+            <img
+              src="./images/Jacques.jpg"
+              alt="Foto de Perfil"
+              class="profile__foto-perfil"
+            />
+            <ul class="profile__list">
+              <li class="profile__list-item">
+                <h2 class="profile__title">Jacques Cousteau</h2>
+                <img
+                  src="./images/editar.png"
+                  class="profile__button-editor"
+                  alt="Botão-editar-perfil"
+                />
+              </li>
+              <li class="profile__list-item">
+                <p class="profile__subtitle">Explorador</p>
+              </li>
+            </ul>
+          </div>
           <img
-            src="./images/Jacques.jpg"
-            alt="Foto de Perfil"
-            class="profile__foto-perfil"
+            src="./images/mais.png"
+            class="profile__button-popup"
+            alt="Botão-adiciona-cartão"
           />
-          <ul class="profile__list">
-            <li class="profile__list-item">
-              <h2 class="profile__title">Jacques Cousteau</h2>
-              <img
-                src="./images/editar.png"
-                class="profile__button-editor"
-                alt="Botão-editar-perfil"
-              />
-            </li>
-            <li class="profile__list-item">
-              <p class="profile__subtitle">Explorador</p>
-            </li>
-          </ul>
-        </div>
-          <img
-          src="./images/mais.png"
-          class="profile__button-popup"
-          alt="Botão-adiciona-cartão"
-        />
         </div>
       </header>
-      <main class="content">         
-          <section class="gallery">
-          </section> 
+      <main class="content">
+        <section class="gallery"></section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
       </footer>
-    <div class="modal-popup">
       <div class="modal">
         <div class="modal__header">
           <img
@@ -66,7 +64,7 @@
             alt="Botão de Fechar"
           />
           <h2 class="modal__title">Editar perfil</h2>
-          <form class="form">
+          <form class="form" novalidate>
             <fieldset class="form__modal">
               <label class="form__label">
                 <input
@@ -74,37 +72,41 @@
                   id="nome"
                   class="form__input"
                   placeholder="Nome"
+                  minlength="2"
+                  maxlength="40"
                   required
                 />
+                <span class="input__message"></span>
               </label>
-              <hr class="form__line" />
               <label class="form__label">
                 <input
                   type="text"
                   id="sobre"
                   class="form__input"
                   placeholder="Função"
+                  minlength="2"
+                  maxlength="200"
                   required
                 />
+                <span class="input__message"></span>
               </label>
-              <hr class="form__line" />
-              <button class="form__button" type="submit">Salvar</button>
+              <button id="buttonForm" class="form__button" type="submit">
+                Salvar
+              </button>
             </fieldset>
           </form>
         </div>
       </div>
-    </div>
-    <div class="modal-popup" id="modal-popup">
       <div class="modal" id="modal">
         <div class="modal__header" id="modal__header">
           <img
             src="./images/close-icon.png"
             class="modal__button-close"
-            id="modal__button-close"
+            id="modalclose"
             alt="Botão de Fechar"
           />
           <h2 class="modal__title" id="modal__title">Novo Local</h2>
-          <form class="form" id="addForm">
+          <form class="form" id="addForm" novalidate>
             <fieldset class="form__modal" id="form__modal">
               <label class="form__label" id="form__label">
                 <input
@@ -112,62 +114,67 @@
                   id="title"
                   class="form__input"
                   placeholder="Title da Imagem"
+                  minlength="2"
+                  maxlength="30"
                   required
                 />
+                <span class="input__message"></span>
               </label>
-              <hr class="form__line" id="form__line"/>
               <label class="form__label" id="formlabel">
                 <input
                   type="url"
                   id="link"
                   class="form__input"
                   placeholder="Link da Imagem"
+                  minlength="2"
+                  maxlength="30"
                   required
                 />
+                <span class="input__message"></span>
               </label>
-              <hr class="form__line" id="formline"/>
-              <button class="form__button" type="submit" id="formadd">Criar</button>
+              <button class="form__button" type="submit" id="formadd">
+                Criar
+              </button>
             </fieldset>
           </form>
         </div>
       </div>
-    </div>
-    <div class="modalImage">
-      <div class="modalContainer">
-        <img
-          class="modalbButtonClose"
-          src="./images/close-icon.png"
-          alt="Botão de fechar o modal"
-        />
-        <div class="modalContainerImage">
-          <img class="modalRenderImage" src="#" alt="#" />
-          <h2 class="modalImageTitle"></h2>
+      <div class="modalImage">
+        <div class="modalContainer">
+          <img
+            class="modalbButtonClose"
+            src="./images/close-icon.png"
+            alt="Botão de fechar o modal"
+          />
+          <div class="modalContainerImage">
+            <img class="modalRenderImage" src="#" alt="#" />
+            <h2 class="modalImageTitle"></h2>
+          </div>
         </div>
       </div>
-    </div>
-    <template class="template" id="template">
-      <div class="gallery__item">
-         <img 
-         class="gallery__lixeira"
-         src="./images/lixeira.png"  
-         alt="Lixeira"
-         />
-        <img
-          class="gallery__image"
-          src="./images/montanhas_care.png"
-          alt="Montanhas Care"
-        />
-        <div class="gallery__text-button">
-          <h2 class="gallery__title"></h2>
+      <template class="template" id="template">
+        <div class="gallery__item">
           <img
-            src="./images/like.png"
-            class="gallery__button-like"
-            alt="Botão de Curtir"
+            class="gallery__lixeira"
+            src="./images/lixeira.png"
+            alt="Lixeira"
           />
-         </div>
-      </div>
-    </template>
-  </div>
+          <img
+            class="gallery__image"
+            src="./images/montanhas_care.png"
+            alt="Montanhas Care"
+          />
+          <div class="gallery__text-button">
+            <h2 class="gallery__title"></h2>
+            <img
+              src="./images/like.png"
+              class="gallery__button-like"
+              alt="Botão de Curtir"
+            />
+          </div>
+        </div>
+      </template>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
