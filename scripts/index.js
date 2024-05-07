@@ -224,15 +224,17 @@ function validateInputs(input, errorClass) {
 }
 
 function enableValidation(elementos) {
-  const form = document.querySelector(elementos.formSelector)
-  const inputs = Array.from(form.querySelectorAll(elementos.inputSelector))
-  const button = form.querySelector(elementos.submitButtonSelector)
-  for (const input of inputs) {
-    input.addEventListener("input", (event) =>{
-      const element = event.target
-      validateInputs(element, elementos.inputErrorClass)
-      validatButton({ buttonElement: button, allInputs: inputs })
-    })
+  const forms = Array.from(document.querySelectorAll(elementos.formSelector))
+  for (const form of forms) {
+    const inputs = Array.from(form.querySelectorAll(elementos.inputSelector))
+    const button = form.querySelector(elementos.submitButtonSelector)
+    for (const input of inputs) {
+      input.addEventListener("input", (event) =>{
+        const element = event.target
+        validateInputs(element, elementos.inputErrorClass)
+        validatButton({ buttonElement: button, allInputs: inputs })
+      })
+    }
   }
 }
 
@@ -246,11 +248,11 @@ enableValidation({
 });
 
 // enableValidation(Gallery)
-enableValidation({
-    formSelector: "#addForm",
-    inputSelector: ".form__input",
-    submitButtonSelector: ".form__button",
-    inactiveButtonClass: "button__disabled",
-    inputErrorClass: "input__error",
-    errorClassMsg: "input__message",
-  });
+// enableValidation({
+//     formSelector: "#addForm",
+//     inputSelector: ".form__input",
+//     submitButtonSelector: ".form__button",
+//     inactiveButtonClass: "button__disabled",
+//     inputErrorClass: "input__error",
+//     errorClassMsg: "input__message",
+//   });
