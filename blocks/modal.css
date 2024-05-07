@@ -91,7 +91,7 @@
     border-bottom: 2px solid red;
 }
 
-.input__message{
+.form__input-message{
     display: flex;
     max-width: 350px;
     font-size: 12px;
@@ -100,6 +100,13 @@
 
   /*------> PARTE POP-UP ERROR <-----*/
 
+  .form__line{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid black;
+    opacity: 20%;
+  }
 
 .form__input {
     width: 100%;
@@ -110,7 +117,6 @@
     line-height: 16.94px;
     font-weight: 400;
     border: none;
-    border-bottom: 1px solid rgba(00, 00, 00, 0.2) ;
   }
 
 .form__button{
@@ -152,7 +158,6 @@
         width: 100%;
         max-width: 238px;
         font-size: 18px;
-        line-height: 21.78px;    
         margin-bottom: 30px;
     }
 
