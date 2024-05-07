@@ -81,9 +81,7 @@
 
   /*------> PARTE POP-UP ERROR <-----*/
 
-.button__disabled{
-    background-color: rgba(255, 255, 255, 0.8);
-}
+
 
 .input__error:invalid {
     display: flex;
@@ -117,6 +115,7 @@
     line-height: 16.94px;
     font-weight: 400;
     border: none;
+    border-bottom: 1px solid rgba(00, 00, 00, 0.2);
   }
 
 .form__button{
@@ -131,6 +130,13 @@
     line-height: 21.78px;
     font-weight: 400;
     align-items: center;
+}
+
+.button__disabled{
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border: 1px solid black;
+    opacity: 0.2;
 }
 
 .form__button:hover{

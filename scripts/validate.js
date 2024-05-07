@@ -18,9 +18,11 @@ function addErrorMessage(tagElement, input) {
   function validatButton(itens) {
     const totalInputs = itens.allInputs.length
     if (itens.allInputs.filter((i)=> i.validity.valid).length == totalInputs) {
-        itens.buttonElement.removeAttribute("disabled", true)
+        itens.buttonElement.classList.remove(itens.errorClass)
+        itens.buttonElement.removeAttribute("disabled")
     }else{
         itens.buttonElement.setAttribute("disabled", true)
+        itens.buttonElement.classList.add(itens.errorClass)
     }
   }
   
@@ -43,7 +45,7 @@ function addErrorMessage(tagElement, input) {
       for (const input of inputs) {
         input.addEventListener("input", (event) => {
           const element = event.target
-          validateInputs(element, elementos.inputErrorClass)
+          validateInputs(element, elementos.inputErrorClass) 
           validatButton({ 
             buttonElement: button, 
             allInputs: inputs,
