@@ -1,3 +1,25 @@
+import Card from "./Card.js";
+import FormValidate from "./FormValidate.js";
+import {closePop, activeLike, activeImage} from "./utils.js";
+
+new FormValidate({    
+formSelector: ".form",
+inputSelector: ".form__input",
+submitButtonSelector: ".form__button",
+buttonErrorClass: "button__disabled",
+inputErrorClass: "input__error",
+errorSelector: ".form__input-message"
+},"#addForm").enableValidation();
+
+new FormValidate({    
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__button",
+  buttonErrorClass: "button__disabled",
+  inputErrorClass: "input__error",
+  errorSelector: ".form__input-message"
+  },".form").enableValidation();
+
 // Modal Pop-Up (POP-UP NAME)
 //Botão de Ativar e Fechar
 const buttonEditor = document.querySelector(".profile__button-editor")
@@ -10,21 +32,12 @@ function activePop() {
 buttonEditor.addEventListener("click", activePop)
 
 const buttonClose = document.querySelector(".modal__button-close")
-function closePop(modal, openModalClass) {
-  modal.classList.remove(openModalClass);
-}
 buttonClose.addEventListener("click", function() {
   closePop(modal, "modal__open");
 });
 
 //Botão de Like
 const buttonLikeActive = document.querySelectorAll(".gallery__button-like")
-function activeLike(button) {
-    if(button.getAttribute("src") == "./images/likeclose.png"){
-        return button.setAttribute("src", "./images/like.png")
-    }
-    button.setAttribute("src", "./images/likeclose.png")
-}
 buttonLikeActive.forEach(button => {
     button.addEventListener("click", () => activeLike(button))
 })
@@ -93,38 +106,10 @@ const initialCards = [
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
     }
   ];
-
-  function renderCard(card) {
-    const template = document.querySelector("#template").content.querySelector(".gallery__item");
-    const cardElement = template.cloneNode(true);
-  
-    const titleElement = cardElement.querySelector(".gallery__title");
-    titleElement.textContent = card.name;
-  
-    const cardImage = cardElement.querySelector(".gallery__image");
-    cardImage.setAttribute("src", card.link);
-    cardImage.setAttribute("alt", card.name);
-    cardImage.addEventListener("click", (event) => activeImage(event, card.name));
-  
-    const lixeiraElement = cardElement.querySelector(".gallery__lixeira");
-    lixeiraElement.addEventListener("click", () => {
-      const galleryElement = document.querySelector(".gallery");
-      galleryElement.removeChild(cardElement);
-    });
-  
-    const likeButtonElement = cardElement.querySelector(".gallery__button-like");
-    likeButtonElement.addEventListener("click", () => {
-      const buttonLikeCard = likeButtonElement.getAttribute("src");
-      const imageLike = buttonLikeCard === "./images/like.png" ? "./images/likeclose.png" : "./images/like.png";
-      likeButtonElement.setAttribute("src", imageLike);
-    });
-  
-    return cardElement;
-  }
   
   const galleryElement = document.querySelector(".gallery");
   initialCards.forEach(card => {
-    const cardItem = renderCard(card);
+    const cardItem = new Card(card, "#template", activeImage).generateCard();
     galleryElement.append(cardItem);
   });
   
@@ -133,29 +118,19 @@ const initialCards = [
     evt.preventDefault();
     const cardName = document.querySelector("#title");
     const cardLink = document.querySelector("#link");
-    galleryElement.prepend(renderCard({ name: cardName.value, link: cardLink.value }));
+    galleryElement.prepend(new Card({ name: cardName.value, link: cardLink.value },"#template", activeImage).generateCard());
     cardName.value = "";
     cardLink.value = "";
     closePop(modalLocal, "modal__open-local");
   });
 
-  //Abrir imagem
+  //Abrir pop-up imagem
   const popupViewImage = document.querySelector(".modalImage");
   const closePopupViewImageButton = document.querySelector(
-    ".modalbButtonClose"
-  );
-  function activeImage(event, title) {
-    const selectedImage = event.target
-    const titleModalImage = document.querySelector(".modalImageTitle")
-    const modalImage = document.querySelector(".modalRenderImage")
-    modalImage.src = selectedImage.src
-    modalImage.alt = selectedImage.alt
-    titleModalImage.textContent = title
-    popupViewImage.classList.toggle("modal__view-opened");
-  }
+    ".modalbButtonClose");
+
   closePopupViewImageButton.addEventListener("click", ()=>
-  popupViewImage.classList.toggle("modal__view-opened")
-);
+  popupViewImage.classList.toggle("modal__view-opened"));
 
 // Fechar Teclado e click
 document.onkeydown = (event) => {
