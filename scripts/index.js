@@ -118,11 +118,15 @@ const initialCards = [
     evt.preventDefault();
     const cardName = document.querySelector("#title");
     const cardLink = document.querySelector("#link");
+    const buttonDisabled = document.querySelector("#formadd");
     galleryElement.prepend(new Card({ name: cardName.value, link: cardLink.value },"#template", activeImage).generateCard());
     cardName.value = "";
     cardLink.value = "";
+    buttonDisabled.setAttribute("disabled", true);
+    buttonDisabled.classList.add("button__disabled");
     closePop(modalLocal, "modal__open-local");
   });
+
 
   //Abrir pop-up imagem
   const popupViewImage = document.querySelector(".modalImage");
