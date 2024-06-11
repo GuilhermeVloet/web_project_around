@@ -56,7 +56,7 @@
       <footer class="footer">
         <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
       </footer>
-      <div class="modal">
+      <div class="modal" id="editmodal">
         <div class="modal__header">
           <img
             src="./images/close-icon.png"
@@ -64,12 +64,13 @@
             alt="Botão de Fechar"
           />
           <h2 class="modal__title">Editar perfil</h2>
-          <form class="form" novalidate>
+          <form class="form" id="editForm" novalidate>
             <fieldset class="form__modal">
               <label class="form__label">
                 <input
                   type="text"
-                  id="nome"
+                  id="name"
+                  name="name"
                   class="form__input"
                   placeholder="Nome"
                   minlength="2"
@@ -81,7 +82,8 @@
               <label class="form__label">
                 <input
                   type="text"
-                  id="sobre"
+                  id="about"
+                  name="about"
                   class="form__input"
                   placeholder="Função"
                   minlength="2"
@@ -102,7 +104,7 @@
           </form>
         </div>
       </div>
-      <div class="modal" id="modal">
+      <div class="modal" id="addmodal">
         <div class="modal__header" id="modal__header">
           <img
             src="./images/close-icon.png"
@@ -117,6 +119,7 @@
                 <input
                   type="text"
                   id="title"
+                  name="title"
                   class="form__input"
                   placeholder="Title da Imagem"
                   minlength="2"
@@ -129,10 +132,10 @@
                 <input
                   type="url"
                   id="link"
+                  name="link"
                   class="form__input"
                   placeholder="Link da Imagem"
                   minlength="2"
-                  maxlength="30"
                   required
                 />
                 <span class="form__input-message"></span>
@@ -144,10 +147,10 @@
           </form>
         </div>
       </div>
-      <div class="modalImage">
+      <div class="modalImage" id="viewimage">
         <div class="modalContainer">
           <img
-            class="modalbButtonClose"
+            class="modal__button-close modalButtonClose"
             src="./images/close-icon.png"
             alt="Botão de fechar o modal"
           />

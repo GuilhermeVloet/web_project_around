@@ -10,12 +10,11 @@ export default class Card {
     const template = document.querySelector(this._templateSelector)
     .content.querySelector(".gallery__item");
     const cardElement = template.cloneNode(true);
-      
     return cardElement
     }
 
   _setEventListeners(cardImage, lixeiraElement, cardElement, likeButtonElement) {
-    cardImage.addEventListener("click", (event) => this._activeImage(event, this._name));
+    cardImage.addEventListener("click", (event) => this._activeImage.open(event.target.src, this._name));
     lixeiraElement.addEventListener("click", () => {
       const galleryElement = document.querySelector(".gallery");
       galleryElement.removeChild(cardElement);
@@ -36,7 +35,6 @@ export default class Card {
     cardImage.setAttribute("alt", this._name);
     const lixeiraElement = cardElement.querySelector(".gallery__lixeira");
     const likeButtonElement = cardElement.querySelector(".gallery__button-like");
-
     this._setEventListeners(cardImage, lixeiraElement, cardElement, likeButtonElement)
     return cardElement;
   }

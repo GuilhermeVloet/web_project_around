@@ -20,27 +20,24 @@ export default class FormValidate {
     input.classList.remove(this._config.inputErrorClass);
   }
 
-  _validateButton(index) {
-    const submitButtons = document.querySelectorAll(this._config.submitButtonSelector);
+  _validateButton(submitButton) {
     const form = document.querySelector(this._validator);
     const inputs = Array.from(form.getElementsByTagName("input"));
 
     const allValid = inputs.every((input) => input.checkValidity());
-
     if (allValid) {
-      submitButtons[index].classList.remove(this._config.buttonErrorClass);
-      submitButtons[index].removeAttribute("disabled");
+      submitButton.classList.remove(this._config.buttonErrorClass);
+      submitButton.removeAttribute("disabled");
     } else {
-      submitButtons[index].setAttribute("disabled", true);
-      submitButtons[index].classList.add(this._config.buttonErrorClass);
+      submitButton.setAttribute("disabled", true);
+      submitButton.classList.add(this._config.buttonErrorClass);
     }
   }
 
-  _setEventListeners(input, index) {
+  _setEventListeners(input, submitButton) {
     input.addEventListener("input", () => {
       const isValid = input.checkValidity();
       const errorElement = input.parentNode.querySelector(this._config.errorSelector);
-
       if (isValid) {
         this._removeErrorMessage(errorElement);
         this._removeErrorClass(input);
@@ -48,18 +45,17 @@ export default class FormValidate {
         this._addErrorMessage(errorElement, input);
         this._addErrorClass(input);
       }
-      this._validateButton(index);
+      this._validateButton(submitButton);
     });
   }
 
   enableValidation() {
     const form = document.querySelector(this._validator);
     const inputs = Array.from(form.getElementsByTagName("input"));
-    const submitButtons = document.querySelectorAll(this._config.submitButtonSelector);
-
-    inputs.forEach((input, index) => {
-      this._setEventListeners(input, index);
-      this._validateButton(index);
+    const submitButton = form.querySelector(this._config.submitButtonSelector);
+    inputs.forEach((input) => {
+      this._setEventListeners(input, submitButton);
+      this._validateButton(submitButton);
     });
   }
 }
