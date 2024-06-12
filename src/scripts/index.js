@@ -45,7 +45,7 @@ const popupAddCard = new PopupWithForm(
         new Card(
           { name: title, link: link },
           "#template",
-          activeImage
+          popWithImage
         ).generateCard()
       );
       popupAddCard.close();
