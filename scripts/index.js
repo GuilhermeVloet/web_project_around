@@ -1,6 +1,5 @@
 import Card from "./Card.js";
 import FormValidate from "./FormValidate.js";
-// import { activeImage } from "./utils.js";
 import Section from "./Section.js";
 import PopupWithImage from "./PopupWithImage.js";
 import PopupWithForm from "./PopupWithForm.js";
