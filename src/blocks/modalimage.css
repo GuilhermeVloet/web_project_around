@@ -40,7 +40,7 @@
     margin-top: 10px;
   }
 
-  .modalButtonClose{
+  .modal__button-closed{
     width: 100%;
     max-width: 40px;
     position: absolute;
