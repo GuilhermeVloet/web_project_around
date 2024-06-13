@@ -21,9 +21,16 @@ export default class Popup {
   }
 
   setEventListener() {
-    this.popup
-      .querySelector(".modal__button-close")
-      .addEventListener("click", () => this.close());
+    const modalCloseButton = this.popup.querySelector(".modal__button-close");
+    if (modalCloseButton) {
+      modalCloseButton.addEventListener("click", () => this.close());
+    }
+    const modalImageCloseButton = this.popup.querySelector(
+      ".modal-image__button-close"
+    );
+    if (modalImageCloseButton) {
+      modalImageCloseButton.addEventListener("click", () => this.close());
+    }
     this.popup.addEventListener("click", (event) => {
       event.target.classList.remove("modal__open");
     });
