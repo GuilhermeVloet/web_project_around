@@ -122,9 +122,9 @@ const initialCards = [
 ];
 
 const popWithImage = new PopupWithImage(
-  ".modal__image",
-  document.querySelector(".modal__render-image"),
-  document.querySelector(".modal__image-title")
+  ".modal-image",
+  document.querySelector(".modal-image__render-image"),
+  document.querySelector(".modal-image__image-title")
 );
 const section = new Section(
   {
