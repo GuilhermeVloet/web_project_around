@@ -1,11 +1,11 @@
 import "../pages/index.css";
 // Import Images
-import lagodibraies from "../images/lago_di_braies.png";
-import lagolouise from "../images/lago_louise.png";
-import latemar from "../images/latemar.png";
-import montanhascare from "../images/montanhas_care.png";
-import parquenacional from "../images/parque_nacional.png";
-import valeyosemite from "../images/vale_de_Yosemite.png";
+// import lagodibraies from "../images/lago_di_braies.png";
+// import lagolouise from "../images/lago_louise.png";
+// import latemar from "../images/latemar.png";
+// import montanhascare from "../images/montanhas_care.png";
+// import parquenacional from "../images/parque_nacional.png";
+// import valeyosemite from "../images/vale_de_Yosemite.png";
 
 // Import Items
 import Card from "../components/Card.js";
@@ -97,34 +97,34 @@ buttonEditor.addEventListener("click", () => popupEditProfile.open());
 const initialCards = [
   {
     name: "Vale de Yosemite",
-    link: valeyosemite,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
   },
   {
     name: "Lago Louise",
-    link: lagolouise,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
   },
   {
     name: "Montanhas Carecas",
-    link: montanhascare,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
   },
   {
     name: "Latemar",
-    link: latemar,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
   },
   {
     name: "Parque Nacional da Vanoise ",
-    link: parquenacional,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
   },
   {
     name: "Lago di Braies",
-    link: lagodibraies,
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
   },
 ];
 
 const popWithImage = new PopupWithImage(
-  ".modalImage",
-  document.querySelector(".modalRenderImage"),
-  document.querySelector(".modalImageTitle")
+  ".modal__image",
+  document.querySelector(".modal__render-image"),
+  document.querySelector(".modal__image-title")
 );
 const section = new Section(
   {
