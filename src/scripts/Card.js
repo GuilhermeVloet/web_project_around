@@ -1,3 +1,6 @@
+import like from "../images/like.png";
+import likeclose from "../images/likeclose.png";
+
 export default class Card {
   constructor(cardData, templateSelector, activeImage) {
     this._name = cardData.name;
@@ -29,10 +32,7 @@ export default class Card {
     });
     likeButtonElement.addEventListener("click", () => {
       const buttonLikeCard = likeButtonElement.getAttribute("src");
-      const imageLike =
-        buttonLikeCard === "./images/like.png"
-          ? "./images/likeclose.png"
-          : "./images/like.png";
+      const imageLike = buttonLikeCard === like ? likeclose : like;
       likeButtonElement.setAttribute("src", imageLike);
     });
   }

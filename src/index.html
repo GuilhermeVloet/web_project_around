@@ -1,188 +1,195 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The U.S. AROUND" />
-    <meta name="author" content="Guilherme Vloet" />
-    <meta
-      name="keywords"
-      content="Desenvolvimento via Html, Css, JavaScrip & Figma"
-    />
-    <link rel="shortcut icon" href="./flavicon.icon.png" />
-    <title lang="en">The U.S. AROUND</title>
-    <link rel="stylesheet" href="./pages/index.css" />
-  </head>
-  <body>
-    <div class="page">
-      <header class="header" id="header">
-        <img
-          src="./images/logo.png"
-          class="header__logo"
-          alt="Logo-Site-Around"
-        />
-        <hr class="header__line" />
-        <div class="profile">
-          <div class="profile__container-avatar-and-text">
+  <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Webpack</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="The U.S. AROUND" />
+      <meta name="author" content="Guilherme Vloet" />
+      <meta
+        name="keywords"
+        content="Desenvolvimento via Html, Css, JavaScrip & Figma"
+      />
+      <link rel="shortcut icon" href="./flavicon.icon.png" />
+      <title lang="en">The U.S. AROUND</title>
+      <link rel="stylesheet" href="./pages/index.css" />
+    </head>
+    <body>
+      <div class="page">
+        <header class="header" id="header">
+          <img
+            src="<%= require(./images/logo.png)%>"
+            class="header__logo"
+            alt="Logo-Site-Around"
+          />
+          <hr class="header__line" />
+          <div class="profile">
+            <div class="profile__container-avatar-and-text">
+              <img
+                src="<%= require(./images/Jacques.jpg)%>"
+                alt="Foto de Perfil"
+                class="profile__foto-perfil"
+              />
+              <ul class="profile__list">
+                <li class="profile__list-item">
+                  <h2 class="profile__title">Jacques Cousteau</h2>
+                  <img
+                    src="<%= require(./images/editar.png)%>"
+                    class="profile__button-editor"
+                    alt="Botão-editar-perfil"
+                  />
+                </li>
+                <li class="profile__list-item">
+                  <p class="profile__subtitle">Explorador</p>
+                </li>
+              </ul>
+            </div>
             <img
-              src="./images/Jacques.jpg"
-              alt="Foto de Perfil"
-              class="profile__foto-perfil"
-            />
-            <ul class="profile__list">
-              <li class="profile__list-item">
-                <h2 class="profile__title">Jacques Cousteau</h2>
-                <img
-                  src="./images/editar.png"
-                  class="profile__button-editor"
-                  alt="Botão-editar-perfil"
-                />
-              </li>
-              <li class="profile__list-item">
-                <p class="profile__subtitle">Explorador</p>
-              </li>
-            </ul>
-          </div>
-          <img
-            src="./images/mais.png"
-            class="profile__button-popup"
-            alt="Botão-adiciona-cartão"
-          />
-        </div>
-      </header>
-      <main class="content">
-        <section class="gallery"></section>
-      </main>
-      <footer class="footer">
-        <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
-      </footer>
-      <div class="modal" id="editmodal">
-        <div class="modal__header">
-          <img
-            src="./images/close-icon.png"
-            class="modal__button-close"
-            alt="Botão de Fechar"
-          />
-          <h2 class="modal__title">Editar perfil</h2>
-          <form class="form" id="editForm" novalidate>
-            <fieldset class="form__modal">
-              <label class="form__label">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  class="form__input"
-                  placeholder="Nome"
-                  minlength="2"
-                  maxlength="40"
-                  required
-                />
-                <span class="form__input-message"></span>
-              </label>
-              <label class="form__label">
-                <input
-                  type="text"
-                  id="about"
-                  name="about"
-                  class="form__input"
-                  placeholder="Função"
-                  minlength="2"
-                  maxlength="200"
-                  required
-                />
-                <span class="form__input-message"></span>
-              </label>
-              <button
-                id="buttonForm"
-                class="form__button"
-                disabled
-                type="submit"
-              >
-                Salvar
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <div class="modal" id="addmodal">
-        <div class="modal__header" id="modal__header">
-          <img
-            src="./images/close-icon.png"
-            class="modal__button-close"
-            id="modalclose"
-            alt="Botão de Fechar"
-          />
-          <h2 class="modal__title" id="modal__title">Novo Local</h2>
-          <form class="form" id="addForm" novalidate>
-            <fieldset class="form__modal" id="form__modal">
-              <label class="form__label" id="form__label">
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  class="form__input"
-                  placeholder="Title da Imagem"
-                  minlength="2"
-                  maxlength="30"
-                  required
-                />
-                <span class="form__input-message"></span>
-              </label>
-              <label class="form__label" id="formlabel">
-                <input
-                  type="url"
-                  id="link"
-                  name="link"
-                  class="form__input"
-                  placeholder="Link da Imagem"
-                  minlength="2"
-                  required
-                />
-                <span class="form__input-message"></span>
-              </label>
-              <button class="form__button" type="submit" disabled id="formadd">
-                Criar
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <div class="modalImage" id="viewimage">
-        <div class="modalContainer">
-          <img
-            class="modal__button-close modalButtonClose"
-            src="./images/close-icon.png"
-            alt="Botão de fechar o modal"
-          />
-          <div class="modalContainerImage">
-            <img class="modalRenderImage" src="#" alt="#" />
-            <h2 class="modalImageTitle"></h2>
-          </div>
-        </div>
-      </div>
-      <template class="template" id="template">
-        <div class="gallery__item">
-          <img
-            class="gallery__lixeira"
-            src="./images/lixeira.png"
-            alt="Lixeira"
-          />
-          <img
-            class="gallery__image"
-            src="./images/montanhas_care.png"
-            alt="Montanhas Care"
-          />
-          <div class="gallery__text-button">
-            <h2 class="gallery__title"></h2>
-            <img
-              src="./images/like.png"
-              class="gallery__button-like"
-              alt="Botão de Curtir"
+              src="<%= require(./images/mais.png)%>"
+              class="profile__button-popup"
+              alt="Botão-adiciona-cartão"
             />
           </div>
+        </header>
+        <main class="content">
+          <section class="gallery"></section>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
+        </footer>
+        <div class="modal" id="editmodal">
+          <div class="modal__header">
+            <img
+              src="<%= require(./images/close-icon.png)%>"
+              class="modal__button-close"
+              alt="Botão de Fechar"
+            />
+            <h2 class="modal__title">Editar perfil</h2>
+            <form class="form" id="editForm" novalidate>
+              <fieldset class="form__modal">
+                <label class="form__label">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form__input"
+                    placeholder="Nome"
+                    minlength="2"
+                    maxlength="40"
+                    required
+                  />
+                  <span class="form__input-message"></span>
+                </label>
+                <label class="form__label">
+                  <input
+                    type="text"
+                    id="about"
+                    name="about"
+                    class="form__input"
+                    placeholder="Função"
+                    minlength="2"
+                    maxlength="200"
+                    required
+                  />
+                  <span class="form__input-message"></span>
+                </label>
+                <button
+                  id="buttonForm"
+                  class="form__button"
+                  disabled
+                  type="submit"
+                >
+                  Salvar
+                </button>
+              </fieldset>
+            </form>
+          </div>
         </div>
-      </template>
-    </div>
-    <script type="module" src="./scripts/index.js"></script>
-  </body>
-</html>
+        <div class="modal" id="addmodal">
+          <div class="modal__header" id="modal__header">
+            <img
+              src="<%= require(./images/close-icon.png)%>"
+              class="modal__button-close"
+              id="modalclose"
+              alt="Botão de Fechar"
+            />
+            <h2 class="modal__title" id="modal__title">Novo Local</h2>
+            <form class="form" id="addForm" novalidate>
+              <fieldset class="form__modal" id="form__modal">
+                <label class="form__label" id="form__label">
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    class="form__input"
+                    placeholder="Title da Imagem"
+                    minlength="2"
+                    maxlength="30"
+                    required
+                  />
+                  <span class="form__input-message"></span>
+                </label>
+                <label class="form__label" id="formlabel">
+                  <input
+                    type="url"
+                    id="link"
+                    name="link"
+                    class="form__input"
+                    placeholder="Link da Imagem"
+                    minlength="2"
+                    required
+                  />
+                  <span class="form__input-message"></span>
+                </label>
+                <button
+                  class="form__button"
+                  type="submit"
+                  disabled
+                  id="formadd"
+                >
+                  Criar
+                </button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="modalImage" id="viewimage">
+          <div class="modalContainer">
+            <img
+              class="modal__button-close modalButtonClose"
+              src="<%= require(./images/close-icon.png)%>"
+              alt="Botão de fechar o modal"
+            />
+            <div class="modalContainerImage">
+              <img class="modalRenderImage" src="#" alt="#" />
+              <h2 class="modalImageTitle"></h2>
+            </div>
+          </div>
+        </div>
+        <template class="template" id="template">
+          <div class="gallery__item">
+            <img
+              class="gallery__lixeira"
+              src="<%= require(./images/lixeira.png)%>"
+              alt="Lixeira"
+            />
+            <img
+              class="gallery__image"
+              src="<%= require(./images/montanhas_care.png)%>"
+              alt="Montanhas Care"
+            />
+            <div class="gallery__text-button">
+              <h2 class="gallery__title"></h2>
+              <img
+                src="<%= require(./images/like.png)%>"
+                class="gallery__button-like"
+                alt="Botão de Curtir"
+              />
+            </div>
+          </div>
+        </template>
+      </div>
+      <script type="module" src="./scripts/index.js"></script>
+    </body>
+  </html>
+</DOCTYPE>

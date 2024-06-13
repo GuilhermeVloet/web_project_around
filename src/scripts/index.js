@@ -1,3 +1,14 @@
+import "../pages/index.css";
+
+// Import Images
+import lagodibraies from "../images/lago_di_braies.png";
+import lagolouise from "../images/lago_louise.png";
+import latemar from "../images/latemar.png";
+import montanhascare from "../images/montanhas_care.png";
+import parquenacional from "../images/parque_nacional.png";
+import valeyosemite from "../images/vale_de_Yosemite.jpg";
+
+// Import Items
 import Card from "./Card.js";
 import FormValidate from "./FormValidate.js";
 import Section from "./Section.js";
@@ -88,27 +99,27 @@ const list = document.querySelector(".gallery");
 const initialCards = [
   {
     name: "Vale de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg",
+    link: valeyosemite,
   },
   {
     name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg",
+    link: lagolouise,
   },
   {
     name: "Montanhas Carecas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg",
+    link: montanhascare,
   },
   {
     name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg",
+    link: latemar,
   },
   {
     name: "Parque Nacional da Vanoise ",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg",
+    link: parquenacional,
   },
   {
     name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg",
+    link: lagodibraies,
   },
 ];
 
