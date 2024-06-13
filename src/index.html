@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
   <html lang="pt-br">
     <head>
       <meta charset="UTF-8" />
@@ -10,7 +10,6 @@
         name="keywords"
         content="Desenvolvimento via Html, Css, JavaScrip & Figma"
       />
-      <link rel="shortcut icon" href="./flavicon.icon.png" />
       <title lang="en">The U.S. AROUND</title>
       <link rel="stylesheet" href="./pages/index.css" />
     </head>
@@ -18,7 +17,7 @@
       <div class="page">
         <header class="header" id="header">
           <img
-            src="<%= require(./images/logo.png)%>"
+            src="<%=require('./images/logo.png')%>"
             class="header__logo"
             alt="Logo-Site-Around"
           />
@@ -26,7 +25,7 @@
           <div class="profile">
             <div class="profile__container-avatar-and-text">
               <img
-                src="<%= require(./images/Jacques.jpg)%>"
+                src="<%=require('./images/Jacques.jpg')%>"
                 alt="Foto de Perfil"
                 class="profile__foto-perfil"
               />
@@ -34,7 +33,7 @@
                 <li class="profile__list-item">
                   <h2 class="profile__title">Jacques Cousteau</h2>
                   <img
-                    src="<%= require(./images/editar.png)%>"
+                    src="<%=require('./images/editar.png')%>"
                     class="profile__button-editor"
                     alt="Botão-editar-perfil"
                   />
@@ -45,7 +44,7 @@
               </ul>
             </div>
             <img
-              src="<%= require(./images/mais.png)%>"
+              src="<%=require('./images/mais.png')%>"
               class="profile__button-popup"
               alt="Botão-adiciona-cartão"
             />
@@ -60,7 +59,7 @@
         <div class="modal" id="editmodal">
           <div class="modal__header">
             <img
-              src="<%= require(./images/close-icon.png)%>"
+              src="<%=require('./images/close-icon.png')%>"
               class="modal__button-close"
               alt="Botão de Fechar"
             />
@@ -108,7 +107,7 @@
         <div class="modal" id="addmodal">
           <div class="modal__header" id="modal__header">
             <img
-              src="<%= require(./images/close-icon.png)%>"
+              src="<%=require('./images/close-icon.png')%>"
               class="modal__button-close"
               id="modalclose"
               alt="Botão de Fechar"
@@ -157,7 +156,7 @@
           <div class="modalContainer">
             <img
               class="modal__button-close modalButtonClose"
-              src="<%= require(./images/close-icon.png)%>"
+              src="<%=require('./images/close-icon.png')%>"
               alt="Botão de fechar o modal"
             />
             <div class="modalContainerImage">
@@ -170,26 +169,22 @@
           <div class="gallery__item">
             <img
               class="gallery__lixeira"
-              src="<%= require(./images/lixeira.png)%>"
+              src="<%=require('./images/lixeira.png')%>"
               alt="Lixeira"
             />
             <img
               class="gallery__image"
-              src="<%= require(./images/montanhas_care.png)%>"
+              src="<%=require('./images/montanhas_care.png')%>"
               alt="Montanhas Care"
             />
             <div class="gallery__text-button">
               <h2 class="gallery__title"></h2>
-              <img
-                src="<%= require(./images/like.png)%>"
-                class="gallery__button-like"
-                alt="Botão de Curtir"
-              />
+              <img src="" class="gallery__button-like" alt="Botão de Curtir" />
             </div>
           </div>
         </template>
       </div>
-      <script type="module" src="./scripts/index.js"></script>
+      <!-- <script type="module" src="./scripts/index.js"></script> -->
     </body>
   </html>
 </DOCTYPE>

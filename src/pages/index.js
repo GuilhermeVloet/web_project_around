@@ -1,5 +1,4 @@
 import "../pages/index.css";
-
 // Import Images
 import lagodibraies from "../images/lago_di_braies.png";
 import lagolouise from "../images/lago_louise.png";
@@ -9,12 +8,12 @@ import parquenacional from "../images/parque_nacional.png";
 import valeyosemite from "../images/vale_de_Yosemite.jpg";
 
 // Import Items
-import Card from "./Card.js";
-import FormValidate from "./FormValidate.js";
-import Section from "./Section.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithForm from "./PopupWithForm.js";
-import UserInfo from "./UserInfo.js";
+import Card from "../components/Card.js";
+import FormValidate from "../components/FormValidate.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
 new FormValidate(
   {
@@ -95,7 +94,6 @@ const buttonEditor = document.querySelector(".profile__button-editor");
 buttonEditor.addEventListener("click", () => popupEditProfile.open());
 
 // Cartões de Imagens (POP-UP LOCAL)
-const list = document.querySelector(".gallery");
 const initialCards = [
   {
     name: "Vale de Yosemite",
