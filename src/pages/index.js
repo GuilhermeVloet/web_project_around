@@ -5,7 +5,7 @@ import lagolouise from "../images/lago_louise.png";
 import latemar from "../images/latemar.png";
 import montanhascare from "../images/montanhas_care.png";
 import parquenacional from "../images/parque_nacional.png";
-import valeyosemite from "../images/vale_de_Yosemite.jpg";
+import valeyosemite from "../images/vale_de_Yosemite.png";
 
 // Import Items
 import Card from "../components/Card.js";
