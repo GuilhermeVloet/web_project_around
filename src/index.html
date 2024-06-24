@@ -152,7 +152,7 @@
           <img
             class="modal-image__button-close"
             src="<%=require('./images/close-icon.png')%>"
-            alt="Botão de fechar o modal"
+            alt="Botão de fechar"
           />
           <div class="modal-image__container-image">
             <img class="modal-image__render-image" src="#" alt="#" />
@@ -182,6 +182,49 @@
           </div>
         </div>
       </template>
+      <div class="PopupWithConfirmation">
+        <div class="PopupWithConfirmation-container">
+          <img
+            src="<%=require('./images/close-icon.png')%>"
+            class="modal__button-close PopupWithConfirmation__button-close"
+            alt="Botão de fechar"
+          />
+          <h2 class="PopupWithConfirmation-container__title">Tem certeza?</h2>
+          <button
+            class="form__button PopupWithConfirmation-container__button"
+            type="submit"
+            disabled
+          >
+            Sim
+          </button>
+        </div>
+      </div>
+      <form class="modal-profile">
+        <fieldset class="modal-profile__container">
+          <img
+            src="../src/images/close-icon.png"
+            class="modal__button-close"
+            alt="Botão de fechar"
+          />
+          <h2 class="modal-profile__title">Alterar a foto do perfil</h2>
+          <label class="modal-profile__label">
+            <input
+              placeholder="Cole seu link url aqui"
+              type="url"
+              class="modal-profile__link"
+              required
+            />
+            <span class="modal-profile__span"></span>
+          </label>
+          <button
+            class="form__button modal-profile__button"
+            type="submit"
+            disabled
+          >
+            Salvar
+          </button>
+        </fieldset>
+      </form>
     </div>
   </body>
 </html>

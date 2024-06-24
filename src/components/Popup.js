@@ -36,5 +36,3 @@ export default class Popup {
     });
   }
 }
-
-// receber parametro para fechar o popup de imagem

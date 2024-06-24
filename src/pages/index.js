@@ -1,11 +1,4 @@
 import "../pages/index.css";
-// Import Images
-// import lagodibraies from "../images/lago_di_braies.png";
-// import lagolouise from "../images/lago_louise.png";
-// import latemar from "../images/latemar.png";
-// import montanhascare from "../images/montanhas_care.png";
-// import parquenacional from "../images/parque_nacional.png";
-// import valeyosemite from "../images/vale_de_Yosemite.png";
 
 // Import Items
 import Card from "../components/Card.js";
@@ -14,6 +7,7 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
+import Api from "../components/Api.js";
 
 new FormValidate(
   {
@@ -93,7 +87,6 @@ popupEditProfile.setEventListeners();
 const buttonEditor = document.querySelector(".profile__button-editor");
 buttonEditor.addEventListener("click", () => popupEditProfile.open());
 
-// Cartões de Imagens (POP-UP LOCAL)
 const initialCards = [
   {
     name: "Vale de Yosemite",
@@ -121,21 +114,44 @@ const initialCards = [
   },
 ];
 
+let section;
+
 const popWithImage = new PopupWithImage(
   ".modal-image",
   document.querySelector(".modal-image__render-image"),
   document.querySelector(".modal-image__image-title")
 );
-const section = new Section(
-  {
-    items: initialCards,
-    renderer: (card) => {
-      const cardItem = new Card(card, "#template", popWithImage).generateCard();
-      section.addItem(cardItem);
-    },
+const clientApi = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-11",
+  headers: {
+    "Content-Type": "application/json",
+    authorization: "ef61af7f-62bd-42c6-ac64-de2d2731292b",
   },
-  ".gallery"
-);
-section.renderItems();
-
+});
+clientApi
+  .getInitialCards()
+  .then((res) => {
+    return res.json();
+  })
+  .then((card) => {
+    section = new Section(
+      {
+        items: card,
+        renderer: (card) => {
+          const cardItem = new Card(
+            card,
+            "#template",
+            popWithImage
+          ).generateCard();
+          section.addItem(cardItem);
+        },
+      },
+      ".gallery"
+    );
+    section.renderItems();
+  });
 popWithImage.setEventListener();
+
+// Trocar o render de cards (urlimage) para api
+// adaptar as chamadas de busca, cria, deleta, atualiza
+// validação doa api Then or catch

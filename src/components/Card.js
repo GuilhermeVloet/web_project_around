@@ -5,6 +5,8 @@ export default class Card {
   constructor(cardData, templateSelector, activeImage) {
     this._name = cardData.name;
     this._link = cardData.link;
+    this._id = cardData.id;
+    this._ownerId = cardData.ownerId;
     this._handleCardClick = activeImage;
     this._templateSelector = templateSelector;
   }
@@ -39,6 +41,8 @@ export default class Card {
 
   generateCard() {
     const cardElement = this._getTemplate();
+    cardElement.setAttribute("id", this._id);
+    cardElement.setAttribute("owner", this._ownerId);
     const titleElement = cardElement.querySelector(".gallery__title");
     titleElement.textContent = this._name;
     const cardImage = cardElement.querySelector(".gallery__image");
@@ -48,6 +52,7 @@ export default class Card {
     const likeButtonElement = cardElement.querySelector(
       ".gallery__button-like"
     );
+    console.log(cardElement);
     this._setEventListeners(
       cardImage,
       lixeiraElement,
