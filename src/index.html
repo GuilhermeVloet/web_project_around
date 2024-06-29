@@ -11,7 +11,6 @@
       content="Desenvolvimento via Html, Css, JavaScrip & Figma"
     />
     <title lang="en">The U.S. AROUND</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body>
     <div class="page">
@@ -164,6 +163,7 @@
         <div class="gallery__item">
           <img
             class="gallery__lixeira"
+            id="lixeira"
             src="<%=require('./images/lixeira.png')%>"
             alt="Lixeira"
           />
@@ -186,12 +186,12 @@
         <div class="PopupWithConfirmation-container">
           <img
             src="<%=require('./images/close-icon.png')%>"
-            class="modal__button-close PopupWithConfirmation__button-close"
+            class="PopupWithConfirmation__button-close"
             alt="Botão de fechar"
           />
           <h2 class="PopupWithConfirmation-container__title">Tem certeza?</h2>
           <button
-            class="form__button PopupWithConfirmation-container__button"
+            class="PopupWithConfirmation-container__button"
             type="submit"
             disabled
           >
@@ -199,11 +199,11 @@
           </button>
         </div>
       </div>
-      <form class="modal-profile">
+      <form class="modal-profile" id="modalprofile">
         <fieldset class="modal-profile__container">
           <img
-            src="../src/images/close-icon.png"
-            class="modal__button-close"
+            src="<%=require('./images/close-icon.png')%>"
+            class="modal-profile__button-close"
             alt="Botão de fechar"
           />
           <h2 class="modal-profile__title">Alterar a foto do perfil</h2>
@@ -211,16 +211,14 @@
             <input
               placeholder="Cole seu link url aqui"
               type="url"
+              id="profilelink"
               class="modal-profile__link"
+              minlength="2"
               required
             />
             <span class="modal-profile__span"></span>
           </label>
-          <button
-            class="form__button modal-profile__button"
-            type="submit"
-            disabled
-          >
+          <button class="modal-profile__button" type="submit" disabled>
             Salvar
           </button>
         </fieldset>

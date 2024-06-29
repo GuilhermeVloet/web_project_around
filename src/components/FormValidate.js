@@ -37,7 +37,9 @@ export default class FormValidate {
   _setEventListeners(input, submitButton) {
     input.addEventListener("input", () => {
       const isValid = input.checkValidity();
-      const errorElement = input.parentNode.querySelector(this._config.errorSelector);
+      const errorElement = input.parentNode.querySelector(
+        this._config.errorSelector
+      );
       if (isValid) {
         this._removeErrorMessage(errorElement);
         this._removeErrorClass(input);
@@ -57,5 +59,9 @@ export default class FormValidate {
       this._setEventListeners(input, submitButton);
       this._validateButton(submitButton);
     });
+
+    // submitButton.addEventListener("click", () => {
+    //   submitButton.textContent = "Salvando...";
+    // });
   }
 }

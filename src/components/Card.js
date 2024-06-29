@@ -5,8 +5,8 @@ export default class Card {
   constructor(cardData, templateSelector, activeImage) {
     this._name = cardData.name;
     this._link = cardData.link;
-    this._id = cardData.id;
-    this._ownerId = cardData.ownerId;
+    this._id = cardData._id;
+    this._ownerId = cardData.owner;
     this._handleCardClick = activeImage;
     this._templateSelector = templateSelector;
   }
@@ -21,17 +21,17 @@ export default class Card {
 
   _setEventListeners(
     cardImage,
-    lixeiraElement,
+    // lixeiraElement,
     cardElement,
     likeButtonElement
   ) {
     cardImage.addEventListener("click", (event) =>
       this._handleCardClick.open(event.target.src, this._name)
     );
-    lixeiraElement.addEventListener("click", () => {
-      const galleryElement = document.querySelector(".gallery");
-      galleryElement.removeChild(cardElement);
-    });
+    // lixeiraElement.addEventListener("click", () => {
+    //   const galleryElement = document.querySelector(".gallery");
+    //   galleryElement.removeChild(cardElement);
+    // });
     likeButtonElement.addEventListener("click", () => {
       const buttonLikeCard = likeButtonElement.getAttribute("src");
       const imageLike = buttonLikeCard === like ? likeclose : like;
@@ -48,14 +48,13 @@ export default class Card {
     const cardImage = cardElement.querySelector(".gallery__image");
     cardImage.setAttribute("src", this._link);
     cardImage.setAttribute("alt", this._name);
-    const lixeiraElement = cardElement.querySelector(".gallery__lixeira");
+    // const lixeiraElement = cardElement.querySelector(".gallery__lixeira");
     const likeButtonElement = cardElement.querySelector(
       ".gallery__button-like"
     );
-    console.log(cardElement);
     this._setEventListeners(
       cardImage,
-      lixeiraElement,
+      // lixeiraElement,
       cardElement,
       likeButtonElement
     );

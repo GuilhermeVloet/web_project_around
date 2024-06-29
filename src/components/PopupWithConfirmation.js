@@ -1,5 +1,19 @@
-import Popup from "./Popup.js";
+// import Popup from "./Popup.js";
 
-export default class PopupWithConfirmation extends Popup {
-  constructor() {}
-}
+// export default class PopupWithConfirmation extends Popup {
+//   constructor({ popupSelector }) {
+//     super(popupSelector);
+//   }
+
+//   open() {
+//     super.open();
+//   }
+
+//   close() {
+//     super.close();
+//   }
+
+//   setEventListener() {
+//     super.setEventListener();
+//   }
+// }
