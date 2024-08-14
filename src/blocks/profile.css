@@ -9,12 +9,33 @@
 .profile__container-avatar-and-text{
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.profile__foto-pencil{
+    display: none;
+}
+
+.profile__foto-pencil-open{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    max-width: 26px;
+    width: 100%;
+    position: absolute;
+    left: 50px;
+    z-index: 2;
 }
 
 .profile__foto-perfil{
-    width: 120px;
+    max-width: 120px;
+    width: 100%;
     margin-right: 30px;
-    border-radius: 120px;
+    border-radius: 120px; 
+}
+
+.profile__foto-perfil:hover{
+    opacity: 0.6;
 }
 
 .profile__list{

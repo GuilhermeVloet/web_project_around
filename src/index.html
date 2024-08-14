@@ -24,9 +24,14 @@
         <div class="profile">
           <div class="profile__container-avatar-and-text">
             <img
+              src="<%=require('./images/editprofile.png')%>"
+              class="profile__foto-pencil"
+            />
+            <img
               src="<%=require('./images/Jacques.jpg')%>"
               alt="Foto de Perfil"
               class="profile__foto-perfil"
+              id="imagemperfil"
             />
             <ul class="profile__list">
               <li class="profile__list-item">
@@ -174,11 +179,14 @@
           />
           <div class="gallery__text-button">
             <h2 class="gallery__title"></h2>
-            <img
-              src="<%=require('./images/like.png')%>"
-              class="gallery__button-like"
-              alt="Botão de Curtir"
-            />
+            <div class="gallery__like">
+              <img
+                src="<%=require('./images/like.png')%>"
+                class="gallery__like-button"
+                alt="Botão de Curtir"
+              />
+              <span class="gallery__like-number"></span>
+            </div>
           </div>
         </div>
       </template>
@@ -190,11 +198,7 @@
             alt="Botão de fechar"
           />
           <h2 class="PopupWithConfirmation-container__title">Tem certeza?</h2>
-          <button
-            class="PopupWithConfirmation-container__button"
-            type="submit"
-            disabled
-          >
+          <button class="PopupWithConfirmation-container__button" type="submit">
             Sim
           </button>
         </div>

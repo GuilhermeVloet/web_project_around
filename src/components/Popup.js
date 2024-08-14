@@ -34,14 +34,5 @@ export default class Popup {
     this.popup.addEventListener("click", (event) => {
       event.target.classList.remove("modal__open");
     });
-    const modalProfileClose = this.popup.querySelector(
-      ".modal-profile__button-close"
-    );
-    if (modalProfileClose) {
-      modalProfileClose.addEventListener("click", () => this.close());
-    }
-    this.popup.addEventListener("click", (event) => {
-      event.target.classList.remove("modal__open");
-    });
   }
 }

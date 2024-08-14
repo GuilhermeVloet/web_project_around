@@ -44,5 +44,15 @@
 }
 
 .PopupWithConfirmation-container__button{
-    margin: 0 0 34px;
+    margin: 0 0 38px;
+    width: 358px;
+    padding: 18px 125px;
+    background-color: #000000;
+    border: 0;
+    font-family: "Inter", Arial, sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 21.78px;
+    font-weight: 400;
+    align-items: center;
 }
